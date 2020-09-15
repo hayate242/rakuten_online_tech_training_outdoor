@@ -60,3 +60,7 @@ Thumbs.db
 # unit test
 htmlcov/
 .coverage
+
+# added by nakayama
+rakuten/
+env/
