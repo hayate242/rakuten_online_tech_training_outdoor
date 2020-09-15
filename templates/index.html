@@ -1,1 +1,305 @@
 {% extends 'base.html' %}
+{% block content %}
+
+<body class="container">
+    <h2>Healthcare</h2>
+    <!-- today's 5 min video -->
+    <div class="d-flex justify-content-around mt-4">
+        <div>
+            <h3>Today's Exercise</h3>
+            <figure>
+                <a href="/exercise">
+                    <img src="{{ url_for('static', filename='images/today_exercise.png') }}" alt="today's exercise"
+                        class="img-fluid" style="height: 180px">
+                </a>
+            </figure>
+        </div>
+        <div>
+            <h3>Today's Recipe</h3>
+            <figure style="height: 180px">
+                <a href="/recipe">
+                    <img src="{{ url_for('static', filename='images/today_cooking.png') }}" alt="today's recipe"
+                        class="img-fluid" style="height: 180px">
+                </a>
+            </figure>
+        </div>
+    </div>
+    <!-- today's 5 min video -->
+    <!-- product ranking -->
+    <section class="ranking mt-5">
+        <div class="d-flex justify-content-between">
+            <h2>Ranking (healthcare proudcts)</h2>
+            <a href="https://ranking.rakuten.co.jp/daily/100938/" class="btn btn-outline-primary">See more</a>
+        </div>
+        <div class="row mt-4">
+            <!-- No1 -->
+            <div class="col-3 offset-1">
+                <figure>
+                    <img src="{{ url_for('static', filename='images/no1.jpg') }}" alt=""
+                        class="img-fluid mx-auto d-block" width="80px">
+                </figure>
+                <figure>
+                    <a href="https://item.rakuten.co.jp/rosebud/aj4820/">
+                        <img src="https://tshop.r10s.jp/midorimushishop/cabinet/05433915/imgrc0082264534.jpg?fitin=275:275"
+                            alt="【ランキング1位獲得】ユーグレナ・プラス 93粒入り(2袋セット) | ミドリムシ サプリ サプリメント みどりむし ミドリむし ユーグレナ パラミロン ダイエット 健康食品 栄養素 DHA EPA アミノ酸 鉄 ビタミン ミネラル 食物繊維 乳酸菌 栄養補助食品 スーパーフード 男性 女性"
+                            class="img-fluid">
+                    </a>
+                </figure>
+                <div class="">
+                    <p><span class="dui-tag -pr">PR</span>
+                        <a title="【ランキング1位獲得】ユーグレナ・プラス 93粒入り(2袋セット) | ミドリムシ サプリ サプリメント みどりむし ミドリむし ユーグレナ パラミロン ダイエット 健康食品 栄養素 DHA EPA アミノ酸 鉄 ビタミン ミネラル 食物繊維 乳酸菌 栄養補助食品 スーパーフード 男性 女性"
+                            href="" class="d-block text-truncate">【ランキング1位獲得】ユーグレナ・プラス 93粒入り(2袋セット) | ミドリムシ
+                            サプリ サプリメント みどりむし ミドリむし ユーグレナ パラミロン ダイエット 健康食品 栄養素 DHA EPA アミノ酸 鉄 ビタミン ミネラル 食物繊維 乳酸菌
+                            栄養補助食品
+                            スーパーフード 男性 女性</a>
+                    </p>
+                </div>
+                <div class="text-danger">
+                    <span class="important">13,608<small>円</small></span>
+                    <span class="dui-tag -shipping">送料無料</span>
+                </div>
+                <div>
+                    <i class="fas fa-store"></i>
+                    <a class="text-secondary" href="" data-track-action="shop">ユーグレナ・オンライン楽天市場店</a>
+                </div>
+            </div>
+            <!-- No2 -->
+            <div class="col-3 offset-1">
+                <figure>
+                    <img src="{{ url_for('static', filename='images/no2.jpg') }}" alt=""
+                        class="img-fluid mx-auto d-block" width="80px">
+                </figure>
+                <figure>
+                    <a href="https://item.rakuten.co.jp/rosebud/aj4820/">
+                        <img src="https://tshop.r10s.jp/midorimushishop/cabinet/05433915/imgrc0082264534.jpg?fitin=275:275"
+                            alt="【ランキング1位獲得】ユーグレナ・プラス 93粒入り(2袋セット) | ミドリムシ サプリ サプリメント みどりむし ミドリむし ユーグレナ パラミロン ダイエット 健康食品 栄養素 DHA EPA アミノ酸 鉄 ビタミン ミネラル 食物繊維 乳酸菌 栄養補助食品 スーパーフード 男性 女性"
+                            class="img-fluid">
+                    </a>
+                </figure>
+                <div class="">
+                    <p><span class="dui-tag -pr">PR</span>
+                        <a title="【ランキング1位獲得】ユーグレナ・プラス 93粒入り(2袋セット) | ミドリムシ サプリ サプリメント みどりむし ミドリむし ユーグレナ パラミロン ダイエット 健康食品 栄養素 DHA EPA アミノ酸 鉄 ビタミン ミネラル 食物繊維 乳酸菌 栄養補助食品 スーパーフード 男性 女性"
+                            href="" class="d-block text-truncate">【ランキング1位獲得】ユーグレナ・プラス 93粒入り(2袋セット) | ミドリムシ
+                            サプリ サプリメント みどりむし ミドリむし ユーグレナ パラミロン ダイエット 健康食品 栄養素 DHA EPA アミノ酸 鉄 ビタミン ミネラル 食物繊維 乳酸菌
+                            栄養補助食品
+                            スーパーフード 男性 女性</a>
+                    </p>
+                </div>
+                <div class="text-danger">
+                    <span class="important">13,608<small>円</small></span>
+                    <span class="dui-tag -shipping">送料無料</span>
+                </div>
+                <div>
+                    <i class="fas fa-store"></i>
+                    <a class="text-secondary" href="" data-track-action="shop">ユーグレナ・オンライン楽天市場店</a>
+                </div>
+            </div>
+            <!-- No3 -->
+            <div class="col-3 offset-1">
+                <figure>
+                    <img src="{{ url_for('static', filename='images/no3.jpg') }}" alt=""
+                        class="img-fluid mx-auto d-block" width="80px">
+                </figure>
+                <figure>
+                    <a href="https://item.rakuten.co.jp/rosebud/aj4820/">
+                        <img src="https://tshop.r10s.jp/midorimushishop/cabinet/05433915/imgrc0082264534.jpg?fitin=275:275"
+                            alt="【ランキング1位獲得】ユーグレナ・プラス 93粒入り(2袋セット) | ミドリムシ サプリ サプリメント みどりむし ミドリむし ユーグレナ パラミロン ダイエット 健康食品 栄養素 DHA EPA アミノ酸 鉄 ビタミン ミネラル 食物繊維 乳酸菌 栄養補助食品 スーパーフード 男性 女性"
+                            class="img-fluid">
+                    </a>
+                </figure>
+                <div class="">
+                    <p><span class="dui-tag -pr">PR</span>
+                        <a title="【ランキング1位獲得】ユーグレナ・プラス 93粒入り(2袋セット) | ミドリムシ サプリ サプリメント みどりむし ミドリむし ユーグレナ パラミロン ダイエット 健康食品 栄養素 DHA EPA アミノ酸 鉄 ビタミン ミネラル 食物繊維 乳酸菌 栄養補助食品 スーパーフード 男性 女性"
+                            href="" class="d-block text-truncate">【ランキング1位獲得】ユーグレナ・プラス 93粒入り(2袋セット) | ミドリムシ
+                            サプリ サプリメント みどりむし ミドリむし ユーグレナ パラミロン ダイエット 健康食品 栄養素 DHA EPA アミノ酸 鉄 ビタミン ミネラル 食物繊維 乳酸菌
+                            栄養補助食品
+                            スーパーフード 男性 女性</a>
+                    </p>
+                </div>
+                <div class="text-danger">
+                    <span class="important">13,608<small>円</small></span>
+                    <span class="dui-tag -shipping">送料無料</span>
+                </div>
+                <div>
+                    <i class="fas fa-store"></i>
+                    <a class="text-secondary" href="" data-track-action="shop">ユーグレナ・オンライン楽天市場店</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- product ranking -->
+
+    <!-- product categories -->
+    <section class="healty_food mt-5">
+        <div class="d-flex justify-content-between">
+            <h2>Healty food</h2>
+            <button type="button" class="btn btn-outline-info">refresh</button>
+        </div>
+        <div class="row mt-3">
+            <div class="col-2">
+                <figure>
+                    <a href="https://item.rakuten.co.jp/rosebud/aj4820/">
+                        <img src="https://tshop.r10s.jp/midorimushishop/cabinet/05433915/imgrc0082264534.jpg?fitin=275:275"
+                            alt="【ランキング1位獲得】ユーグレナ・プラス 93粒入り(2袋セット) | ミドリムシ サプリ サプリメント みどりむし ミドリむし ユーグレナ パラミロン ダイエット 健康食品 栄養素 DHA EPA アミノ酸 鉄 ビタミン ミネラル 食物繊維 乳酸菌 栄養補助食品 スーパーフード 男性 女性"
+                            class="img-fluid">
+                    </a>
+                </figure>
+                <div class="">
+                    <p><span class="dui-tag -pr">PR</span>
+                        <a title="【ランキング1位獲得】ユーグレナ・プラス 93粒入り(2袋セット) | ミドリムシ サプリ サプリメント みどりむし ミドリむし ユーグレナ パラミロン ダイエット 健康食品 栄養素 DHA EPA アミノ酸 鉄 ビタミン ミネラル 食物繊維 乳酸菌 栄養補助食品 スーパーフード 男性 女性"
+                            href="" class="d-block text-truncate">【ランキング1位獲得】ユーグレナ・プラス 93粒入り(2袋セット) | ミドリムシ
+                            サプリ サプリメント みどりむし ミドリむし ユーグレナ パラミロン ダイエット 健康食品 栄養素 DHA EPA アミノ酸 鉄 ビタミン ミネラル 食物繊維 乳酸菌 栄養補助食品
+                            スーパーフード 男性 女性</a>
+                    </p>
+                </div>
+                <div class="text-danger">
+                    <span class="important">13,608<small>円</small></span>
+                    <span class="with-help" data-tooltip="help-shipping" data-duitrack="help-shipping">
+                        <span class="dui-tag -shipping">送料無料</span>
+                    </span>
+                </div>
+                <div>
+                    <i class="fas fa-store"></i>
+                    <a class="text-secondary" href="" data-track-action="shop">ユーグレナ・オンライン楽天市場店</a>
+                </div>
+            </div>
+            <div class="col-2">
+                <figure>
+                    <a href="https://item.rakuten.co.jp/rosebud/aj4820/">
+                        <img src="https://tshop.r10s.jp/midorimushishop/cabinet/05433915/imgrc0082264534.jpg?fitin=275:275"
+                            alt="【ランキング1位獲得】ユーグレナ・プラス 93粒入り(2袋セット) | ミドリムシ サプリ サプリメント みどりむし ミドリむし ユーグレナ パラミロン ダイエット 健康食品 栄養素 DHA EPA アミノ酸 鉄 ビタミン ミネラル 食物繊維 乳酸菌 栄養補助食品 スーパーフード 男性 女性"
+                            class="img-fluid">
+                    </a>
+                </figure>
+                <div class="">
+                    <p><span class="dui-tag -pr">PR</span>
+                        <a title="【ランキング1位獲得】ユーグレナ・プラス 93粒入り(2袋セット) | ミドリムシ サプリ サプリメント みどりむし ミドリむし ユーグレナ パラミロン ダイエット 健康食品 栄養素 DHA EPA アミノ酸 鉄 ビタミン ミネラル 食物繊維 乳酸菌 栄養補助食品 スーパーフード 男性 女性"
+                            href="" class="d-block text-truncate">【ランキング1位獲得】ユーグレナ・プラス 93粒入り(2袋セット) | ミドリムシ
+                            サプリ サプリメント みどりむし ミドリむし ユーグレナ パラミロン ダイエット 健康食品 栄養素 DHA EPA アミノ酸 鉄 ビタミン ミネラル 食物繊維 乳酸菌 栄養補助食品
+                            スーパーフード 男性 女性</a>
+                    </p>
+                </div>
+                <div class="text-danger">
+                    <span class="important">13,608<small>円</small></span>
+                    <span class="with-help" data-tooltip="help-shipping" data-duitrack="help-shipping">
+                        <span class="dui-tag -shipping">送料無料</span>
+                    </span>
+                </div>
+                <div>
+                    <i class="fas fa-store"></i>
+                    <a class="text-secondary" href="" data-track-action="shop">ユーグレナ・オンライン楽天市場店</a>
+                </div>
+            </div>
+            <div class="col-2">
+                <figure>
+                    <a href="https://item.rakuten.co.jp/rosebud/aj4820/">
+                        <img src="https://tshop.r10s.jp/midorimushishop/cabinet/05433915/imgrc0082264534.jpg?fitin=275:275"
+                            alt="【ランキング1位獲得】ユーグレナ・プラス 93粒入り(2袋セット) | ミドリムシ サプリ サプリメント みどりむし ミドリむし ユーグレナ パラミロン ダイエット 健康食品 栄養素 DHA EPA アミノ酸 鉄 ビタミン ミネラル 食物繊維 乳酸菌 栄養補助食品 スーパーフード 男性 女性"
+                            class="img-fluid">
+                    </a>
+                </figure>
+                <div class="">
+                    <p><span class="dui-tag -pr">PR</span>
+                        <a title="【ランキング1位獲得】ユーグレナ・プラス 93粒入り(2袋セット) | ミドリムシ サプリ サプリメント みどりむし ミドリむし ユーグレナ パラミロン ダイエット 健康食品 栄養素 DHA EPA アミノ酸 鉄 ビタミン ミネラル 食物繊維 乳酸菌 栄養補助食品 スーパーフード 男性 女性"
+                            href="" class="d-block text-truncate">【ランキング1位獲得】ユーグレナ・プラス 93粒入り(2袋セット) | ミドリムシ
+                            サプリ サプリメント みどりむし ミドリむし ユーグレナ パラミロン ダイエット 健康食品 栄養素 DHA EPA アミノ酸 鉄 ビタミン ミネラル 食物繊維 乳酸菌 栄養補助食品
+                            スーパーフード 男性 女性</a>
+                    </p>
+                </div>
+                <div class="text-danger">
+                    <span class="important">13,608<small>円</small></span>
+                    <span class="with-help" data-tooltip="help-shipping" data-duitrack="help-shipping">
+                        <span class="dui-tag -shipping">送料無料</span>
+                    </span>
+                </div>
+                <div>
+                    <i class="fas fa-store"></i>
+                    <a class="text-secondary" href="" data-track-action="shop">ユーグレナ・オンライン楽天市場店</a>
+                </div>
+            </div>
+            <div class="col-2">
+                <figure>
+                    <a href="https://item.rakuten.co.jp/rosebud/aj4820/">
+                        <img src="https://tshop.r10s.jp/midorimushishop/cabinet/05433915/imgrc0082264534.jpg?fitin=275:275"
+                            alt="【ランキング1位獲得】ユーグレナ・プラス 93粒入り(2袋セット) | ミドリムシ サプリ サプリメント みどりむし ミドリむし ユーグレナ パラミロン ダイエット 健康食品 栄養素 DHA EPA アミノ酸 鉄 ビタミン ミネラル 食物繊維 乳酸菌 栄養補助食品 スーパーフード 男性 女性"
+                            class="img-fluid">
+                    </a>
+                </figure>
+                <div class="">
+                    <p><span class="dui-tag -pr">PR</span>
+                        <a title="【ランキング1位獲得】ユーグレナ・プラス 93粒入り(2袋セット) | ミドリムシ サプリ サプリメント みどりむし ミドリむし ユーグレナ パラミロン ダイエット 健康食品 栄養素 DHA EPA アミノ酸 鉄 ビタミン ミネラル 食物繊維 乳酸菌 栄養補助食品 スーパーフード 男性 女性"
+                            href="" class="d-block text-truncate">【ランキング1位獲得】ユーグレナ・プラス 93粒入り(2袋セット) | ミドリムシ
+                            サプリ サプリメント みどりむし ミドリむし ユーグレナ パラミロン ダイエット 健康食品 栄養素 DHA EPA アミノ酸 鉄 ビタミン ミネラル 食物繊維 乳酸菌 栄養補助食品
+                            スーパーフード 男性 女性</a>
+                    </p>
+                </div>
+                <div class="text-danger">
+                    <span class="important">13,608<small>円</small></span>
+                    <span class="with-help" data-tooltip="help-shipping" data-duitrack="help-shipping">
+                        <span class="dui-tag -shipping">送料無料</span>
+                    </span>
+                </div>
+                <div>
+                    <i class="fas fa-store"></i>
+                    <a class="text-secondary" href="" data-track-action="shop">ユーグレナ・オンライン楽天市場店</a>
+                </div>
+            </div>
+            <div class="col-2">
+                <figure>
+                    <a href="https://item.rakuten.co.jp/rosebud/aj4820/">
+                        <img src="https://tshop.r10s.jp/midorimushishop/cabinet/05433915/imgrc0082264534.jpg?fitin=275:275"
+                            alt="【ランキング1位獲得】ユーグレナ・プラス 93粒入り(2袋セット) | ミドリムシ サプリ サプリメント みどりむし ミドリむし ユーグレナ パラミロン ダイエット 健康食品 栄養素 DHA EPA アミノ酸 鉄 ビタミン ミネラル 食物繊維 乳酸菌 栄養補助食品 スーパーフード 男性 女性"
+                            class="img-fluid">
+                    </a>
+                </figure>
+                <div class="">
+                    <p><span class="dui-tag -pr">PR</span>
+                        <a title="【ランキング1位獲得】ユーグレナ・プラス 93粒入り(2袋セット) | ミドリムシ サプリ サプリメント みどりむし ミドリむし ユーグレナ パラミロン ダイエット 健康食品 栄養素 DHA EPA アミノ酸 鉄 ビタミン ミネラル 食物繊維 乳酸菌 栄養補助食品 スーパーフード 男性 女性"
+                            href="" class="d-block text-truncate">【ランキング1位獲得】ユーグレナ・プラス 93粒入り(2袋セット) | ミドリムシ
+                            サプリ サプリメント みどりむし ミドリむし ユーグレナ パラミロン ダイエット 健康食品 栄養素 DHA EPA アミノ酸 鉄 ビタミン ミネラル 食物繊維 乳酸菌 栄養補助食品
+                            スーパーフード 男性 女性</a>
+                    </p>
+                </div>
+                <div class="text-danger">
+                    <span class="important">13,608<small>円</small></span>
+                    <span class="with-help" data-tooltip="help-shipping" data-duitrack="help-shipping">
+                        <span class="dui-tag -shipping">送料無料</span>
+                    </span>
+                </div>
+                <div>
+                    <i class="fas fa-store"></i>
+                    <a class="text-secondary" href="" data-track-action="shop">ユーグレナ・オンライン楽天市場店</a>
+                </div>
+            </div>
+            <div class="col-2">
+                <figure>
+                    <a href="https://item.rakuten.co.jp/rosebud/aj4820/">
+                        <img src="https://tshop.r10s.jp/midorimushishop/cabinet/05433915/imgrc0082264534.jpg?fitin=275:275"
+                            alt="【ランキング1位獲得】ユーグレナ・プラス 93粒入り(2袋セット) | ミドリムシ サプリ サプリメント みどりむし ミドリむし ユーグレナ パラミロン ダイエット 健康食品 栄養素 DHA EPA アミノ酸 鉄 ビタミン ミネラル 食物繊維 乳酸菌 栄養補助食品 スーパーフード 男性 女性"
+                            class="img-fluid">
+                    </a>
+                </figure>
+                <div class="">
+                    <p><span class="dui-tag -pr">PR</span>
+                        <a title="【ランキング1位獲得】ユーグレナ・プラス 93粒入り(2袋セット) | ミドリムシ サプリ サプリメント みどりむし ミドリむし ユーグレナ パラミロン ダイエット 健康食品 栄養素 DHA EPA アミノ酸 鉄 ビタミン ミネラル 食物繊維 乳酸菌 栄養補助食品 スーパーフード 男性 女性"
+                            href="" class="d-block text-truncate">【ランキング1位獲得】ユーグレナ・プラス 93粒入り(2袋セット) | ミドリムシ
+                            サプリ サプリメント みどりむし ミドリむし ユーグレナ パラミロン ダイエット 健康食品 栄養素 DHA EPA アミノ酸 鉄 ビタミン ミネラル 食物繊維 乳酸菌 栄養補助食品
+                            スーパーフード 男性 女性</a>
+                    </p>
+                </div>
+                <div class="text-danger">
+                    <span class="important">13,608<small>円</small></span>
+                    <span class="with-help" data-tooltip="help-shipping" data-duitrack="help-shipping">
+                        <span class="dui-tag -shipping">送料無料</span>
+                    </span>
+                </div>
+                <div>
+                    <i class="fas fa-store"></i>
+                    <a class="text-secondary" href="" data-track-action="shop">ユーグレナ・オンライン楽天市場店</a>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+
+{% endblock %}

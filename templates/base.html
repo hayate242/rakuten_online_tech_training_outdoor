@@ -9,6 +9,8 @@
     <link rel="icon" href="{{ url_for('static', filename='rakuten.jpg') }}">
     <!-- Bootstrap CSS -->
     {{ bootstrap.load_css() }}
+    <!-- fontawesome -->
+    {{ fontawesome_html() }}
 </head>
 
 <body>
@@ -23,6 +25,10 @@
     <main class="container">
         {% block content %}{% endblock %}
     </main>
+    {% block scripts %}
+    <!-- Optional JavaScript -->
+    {{ bootstrap.load_js() }}
+    {% endblock %}
     <footer class="footer pt-2 pb-4" style="background-color: #eee;">
         {% block footer %}
         <div class="row">
