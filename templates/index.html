@@ -1,18 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="utf-8">
-    <title>Healthcare</title>
-    <link rel="icon" href="{{ url_for('static', filename='rakuten.jpg') }}">
-    {% block styles %}
-    <!-- Bootstrap CSS -->
-    {{ bootstrap.load_css() }}
-    {% endblock %}
-    <!-- fontawesome -->
-    {{ fontawesome_html() }}
-</head>
-
+{% extends 'base.html' %}
+{% block content %}
 
 <body class="container">
     <h2>Healthcare</h2>
@@ -21,17 +8,17 @@
         <div>
             <h3>Today's Exercise</h3>
             <figure>
-                <a href="/today/exercise">
+                <a href="/exercise">
                     <img src="{{ url_for('static', filename='images/today_exercise.png') }}" alt="today's exercise"
                         class="img-fluid" style="height: 180px">
                 </a>
             </figure>
         </div>
         <div>
-            <h3>Today's Cooking</h3>
+            <h3>Today's Recipe</h3>
             <figure style="height: 180px">
-                <a href="/today/cooking">
-                    <img src="{{ url_for('static', filename='images/today_cooking.png') }}" alt="today's cooking"
+                <a href="/recipe">
+                    <img src="{{ url_for('static', filename='images/today_cooking.png') }}" alt="today's recipe"
                         class="img-fluid" style="height: 180px">
                 </a>
             </figure>
@@ -315,10 +302,6 @@
 
         </div>
     </section>
-    <!-- product categories -->
-    <footer>
-        <small>&copy; 2020 Team Outdoor</a></small>
-    </footer>
 
     {% block scripts %}
     <!-- Optional JavaScript -->
@@ -326,4 +309,4 @@
     {% endblock %}
 </body>
 
-</html>
+{% endblock %}

@@ -1,0 +1,41 @@
+{% from 'bootstrap/nav.html' import render_breadcrumb_item %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Healthcare</title>
+    <link rel="icon" href="{{ url_for('static', filename='rakuten.jpg') }}">
+    <!-- Bootstrap CSS -->
+    {{ bootstrap.load_css() }}
+    <!-- fontawesome -->
+    {{ fontawesome_html() }}
+</head>
+
+<body>
+    <nav aria-label="breadcrumb">
+        <ul class="breadcrumb">
+            {{ render_breadcrumb_item('index', 'Home', use_li=True) }}
+            {{ render_breadcrumb_item('exercise', 'Today\'s Excercise', use_li=True) }}
+            {{ render_breadcrumb_item('recipe', 'Today\'s Recipe', use_li=True) }}
+        </ul>
+    </nav>
+    <h1 class="text-center">Healthcare</h1>
+    <main class="container">
+        {% block content %}{% endblock %}
+    </main>
+    <footer class="footer pt-2 pb-4" style="background-color: #eee;">
+        {% block footer %}
+        <div class="row">
+            <div class="col-md-2 offset-md-2"><img alt="logo" class="img-thumbnail"
+                    src="{{ url_for('static', filename='images/logo.png') }}"></div>
+            <div class="col-md-5 text-muted d-flex align-items-center"><small> &copy; 2020 Team Outdoor (Hayate,
+                    Ryo, Jessica, Leo) </small>
+            </div>
+        </div>
+        {% endblock %}
+    </footer>
+</body>
+
+</html>
