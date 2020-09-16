@@ -30,7 +30,7 @@ pip freeze > requirements.txt
 # migrate db
 ## init
 ```
-$ ./seed_db.sh
+$ ./migrate_db.sh
 ```
 ## insert data
 ```python
