@@ -35,8 +35,8 @@
         <!-- No1 -->
         <div class="col-3 offset-1">
             <figure>
-                <img src="{{ url_for('static', filename='images/no1.jpg') }}" alt=""
-                    class="img-fluid mx-auto d-block" width="80px">
+                <img src="{{ url_for('static', filename='images/no1.jpg') }}" alt="" class="img-fluid mx-auto d-block"
+                    width="80px">
             </figure>
             <figure>
                 <a href="https://item.rakuten.co.jp/rosebud/aj4820/">
@@ -66,8 +66,8 @@
         <!-- No2 -->
         <div class="col-3 offset-1">
             <figure>
-                <img src="{{ url_for('static', filename='images/no2.jpg') }}" alt=""
-                    class="img-fluid mx-auto d-block" width="80px">
+                <img src="{{ url_for('static', filename='images/no2.jpg') }}" alt="" class="img-fluid mx-auto d-block"
+                    width="80px">
             </figure>
             <figure>
                 <a href="https://item.rakuten.co.jp/rosebud/aj4820/">
@@ -97,8 +97,8 @@
         <!-- No3 -->
         <div class="col-3 offset-1">
             <figure>
-                <img src="{{ url_for('static', filename='images/no3.jpg') }}" alt=""
-                    class="img-fluid mx-auto d-block" width="80px">
+                <img src="{{ url_for('static', filename='images/no3.jpg') }}" alt="" class="img-fluid mx-auto d-block"
+                    width="80px">
             </figure>
             <figure>
                 <a href="https://item.rakuten.co.jp/rosebud/aj4820/">
@@ -130,9 +130,10 @@
 <!-- product ranking -->
 
 <!-- product categories -->
+{% for category in categories %}
 <section class="healty_food mt-5">
     <div class="d-flex justify-content-between">
-        <h2>Healty food</h2>
+        <h2>{{category.category_display_name}}</h2>
         <button type="button" class="btn btn-outline-info">refresh</button>
     </div>
     <div class="row mt-3">
@@ -300,6 +301,7 @@
         </div>
     </div>
 </section>
+{% endfor %}
 <!-- </body> -->
 
 {% endblock %}

@@ -8,6 +8,8 @@ import rakutenAPI as rakuten
 import json
 from flask import jsonify
 
+from models.models import Categories
+
 app = Flask(__name__)
 app.config["JSON_AS_ASCII"] = False
 
@@ -18,7 +20,8 @@ fa = FontAwesome(app)
 @app.route('/')
 def index():
     title = 'Healthcare'
-    return render_template('index.html', Title=title)
+    categories = Categories.query.all()
+    return render_template('index.html', Title=title, categories=categories)
 
 
 @app.route('/exercise')
