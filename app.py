@@ -1,9 +1,17 @@
 from flask_bootstrap import Bootstrap
 from flask_fontawesome import FontAwesome
 from flask import Flask
+from flask import request
 from flask import render_template
 import requests
+import rakutenAPI as rakuten
+import json
+from flask import jsonify
+
+from models.models import Categories
+
 app = Flask(__name__)
+app.config["JSON_AS_ASCII"] = False
 
 bootstrap = Bootstrap(app)
 fa = FontAwesome(app)
@@ -12,7 +20,8 @@ fa = FontAwesome(app)
 @app.route('/')
 def index():
     title = 'Healthcare'
-    return render_template('index.html', Title=title)
+    categories = Categories.query.all()
+    return render_template('index.html', Title=title, categories=categories)
 
 
 @app.route('/exercise')
