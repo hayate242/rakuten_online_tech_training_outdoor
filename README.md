@@ -15,3 +15,14 @@ flask run --host=0.0.0.0
 
 then, please go to
 http://localhost:5000/hello
+
+## import/export your environment
+### export
+```
+pip freeze > requirements.txt
+```
+
+### import
+```
+pip install -r requirements.txt
+```
