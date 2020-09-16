@@ -33,7 +33,8 @@ def recipe():
 @app.route('/api/category', methods=['GET'])
 def categorySearch():
     category = request.args.get('category')
-    data = rakuten.item_Search_API(category,6)
+    hits= request.args.get('hits')
+    data = rakuten.item_Search_API(category,hits)
     return jsonify(data)
 @app.route('/api/ranking', methods=['GET'])
 def rankingSearch(hits):
