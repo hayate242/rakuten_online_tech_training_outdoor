@@ -9,4 +9,4 @@ def Ranking_API(self,gID):
     Ranking_API_Endpoint = "https://app.rakuten.co.jp/services/api/IchibaItem/Ranking/20170628?"
     Ranking_API_serch_param={"applicationId":appId,"geneId":gID}
     Ranking_API_result = requests.get(Ranking_API_Endpoint,Ranking_API_serch_param).json()
-    return 
+    return Ranking_API_result
