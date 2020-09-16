@@ -34,18 +34,3 @@ def exercise():
 def recipe():
     title = "Today's 5 min Recipe"
     return render_template('recipe.html', Title=title)
-
-
-@app.route('/api/category', methods=['GET'])
-def categorySearch():
-    category = request.args.get('category')
-    hits = request.args.get('hits')
-    data = rakuten.item_Search_API(category, hits)
-    return jsonify(data)
-
-
-@app.route('/api/ranking', methods=['GET'])
-def rankingSearch(hits):
-    ranking = request.args.get("geneId")
-    data = rakuten.ranking_API(ranking, hits)
-    return jsonify(data)
