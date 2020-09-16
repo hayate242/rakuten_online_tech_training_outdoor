@@ -30,7 +30,7 @@ pip freeze > requirements.txt
 # migrate db
 ## init
 ```
-$ python3 migrate_db.py
+$ ./seed_db.sh
 ```
 ## insert data
 ```python
@@ -45,5 +45,10 @@ $ python3 migrate_db.py
 ```shell
 $ cd models
 $ sqlite3 healthcare.db
+sqlite> select * from videos;
+
+or
+
+$ ./check_db.sh
 sqlite> select * from videos;
 ```
