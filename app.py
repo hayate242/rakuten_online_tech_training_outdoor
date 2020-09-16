@@ -42,5 +42,3 @@ def rankingSearch():
     hits=request.args.get('hits')
     data = rakuten.ranking_API(ranking,hits)
     return jsonify(data)
-if __name__ == "__main__":
-    app.run(debug=True)
