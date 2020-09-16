@@ -11,14 +11,17 @@ fa = FontAwesome(app)
 
 @app.route('/')
 def index():
-    return render_template('index.html')
+    title = 'Healthcare'
+    return render_template('index.html', Title=title)
 
 
 @app.route('/exercise')
 def exercise():
-    return render_template('today.html')
+    title = "Today's 5 min Exercise"
+    return render_template('today.html', Title=title)
 
 
 @app.route('/recipe')
 def recipe():
-    return render_template('today.html')
+    title = "Today's 5 min Recipe"
+    return render_template('today.html', Title=title)
