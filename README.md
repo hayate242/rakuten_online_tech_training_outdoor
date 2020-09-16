@@ -17,12 +17,19 @@ then, please go to
 http://localhost:5000/hello
 
 ## import/export your environment
+### import
+```
+pip install -r requirements.txt
+```
+
 ### export
 ```
 pip freeze > requirements.txt
 ```
 
-### import
+## migrate db
 ```
-pip install -r requirements.txt
+$ python3
+>>> from models.database import init_db
+>>> init_db()
 ```
