@@ -18,10 +18,10 @@ def index():
 @app.route('/exercise')
 def exercise():
     title = "Today's 5 min Exercise"
-    return render_template('today.html', Title=title)
+    return render_template('exercise.html', Title=title)
 
 
 @app.route('/recipe')
 def recipe():
     title = "Today's 5 min Recipe"
-    return render_template('today.html', Title=title)
+    return render_template('recipe.html', Title=title)
