@@ -4,51 +4,31 @@
 <!-- Video -->
 <section class="video_part mt-4">
     <div class="d-flex text-left">
-        <h4>Video's title</h4>
+        <h4>{{ videos[0].video_title }}</h4>
     </div>
     <div class="d-flex justify-content-around mt-4">
         <!-- Left side -->
-        <div class="col-8">
-            <figure>
-                <img src="{{ url_for('static', filename='images/today_exercise.png') }}" alt=""
-                    class="img-fluid" width="780px">
-            </figure>
+        <div class="col-7">
+            <iframe width="640" height="360" src="{{ videos[0].Youtube_link }}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+            </iframe>
         </div>
         <!-- Right side -->
-        <div class="col-4">
+        <div class="col-4 p-0">
+            {% for video in videos[1:] %}
             <div class="d-flex justify-content-around mt-0">
                 <div class="mt-2">
-                    <img src="{{ url_for('static', filename='images/today_exercise.png') }}" alt=""
-                    class="img-fluid" width="200px">
+                    <iframe width="150" height="90" src="{{ video.Youtube_link }}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+                    </iframe> 
                 </div>
                 <div>
-                    <abbr style="font-size:9px">Date: 2020-09-16</h6>
-                    <p style="font-size:10px" class="mb-0">Title: xxx xxx xxx</p>
-                    <p style="font-size:10px" class="mb-0">Here is the describtion for this video.</p>
+                    <abbr style="font-size:9px"><abbr class="font-italic font-weight-bold">Date:</abbr> {{ video.uploaded_at }}
+                    <!-- <p style="font-size:9px inline-height:0px" class="mb-0"><abbr class="font-italic">Date: </abbr>{{ video.uploaded_at }}</p>   -->
+                    <p style="font-size:10px; inline-height:0px;" class="mb-0"><abbr class="font-italic font-weight-bold">Title: </abbr>{{ video.video_title }}</p> 
+                    <p style="font-size:10px; inline-height:0px;" class="mb-0"><abbr class="font-italic font-weight-bold">Description: </abbr>{{ video.explain_text }} </p>
+                    </abbr>
                 </div>
             </div>
-            <div class="d-flex justify-content-around mt-0">
-                <div class="mt-2">
-                    <img src="{{ url_for('static', filename='images/today_exercise.png') }}" alt=""
-                    class="img-fluid" width="200px">
-                </div>
-                <div>
-                    <abbr style="font-size:9px">Date: 2020-09-16</h6>
-                    <p style="font-size:10px" class="mb-0">Title: xxx xxx xxx</p>
-                    <p style="font-size:10px" class="mb-0">Here is the describtion for this video.</p>
-                </div>
-            </div>
-            <div class="d-flex justify-content-around mt-0">
-                <div class="mt-2">
-                    <img src="{{ url_for('static', filename='images/today_exercise.png') }}" alt=""
-                    class="img-fluid" width="200px">
-                </div>
-                <div>
-                    <abbr style="font-size:9px">Date: 2020-09-16</h6>
-                    <p style="font-size:10px" class="mb-0">Title: xxx xxx xxx</p>
-                    <p style="font-size:10px" class="mb-0">Here is the describtion for this video.</p>
-                </div>
-            </div>
+            {% endfor %}
         </div>
     </div>
 </section>
