@@ -1,6 +1,48 @@
 {% extends 'today.html' %}
 
 {% block content2 %}
+<!-- Best Selling -->
+<section class="best_selling mt-4">
+    <div class="d-flex justify-content-between">
+        <h3>Best Selling</h3>
+    </div>
+    <div class="row mt-3">
+        <div class="col-2" v-for="(ranking,index) in rankings">
+            <figure v-if="index == 0" class="mb-0">
+                <img src="{{ url_for('static', filename='images/no1.jpg') }}" alt=""
+                    class="img-fluid mx-auto d-block" width="50px">
+            </figure>
+            <figure v-if="index == 1" class="mb-0">
+                <img src="{{ url_for('static', filename='images/no2.jpg') }}" alt=""
+                    class="img-fluid mx-auto d-block" width="50px">
+            </figure>
+            <figure v-if="index == 2" class="mb-0">
+                <img src="{{ url_for('static', filename='images/no3.jpg') }}" alt=""
+                    class="img-fluid mx-auto d-block" width="50px">
+            </figure>
+            <div v-if="index >= 3" style="padding-top: 40.75px">
+            </div>
+            <figure>
+                <a v-bind:href="ranking['Item']['itemUrl']">
+                    <img v-bind:src="ranking['Item']['mediumImageUrls'][0]['imageUrl']"
+                        v-bind:alt="ranking['Item']['itemName']" class="img-fluid">
+                </a>
+            </figure>
+            <div class="">
+                <p><span class="dui-tag -pr">PR</span>
+                    <a v-bind:href="ranking['Item']['itemUrl']" class="d-block text-truncate">[[[
+                        ranking['Item']['itemName'] ]]]</a>
+                </p>
+            </div>
+            <div class="text-danger">
+                <span class="important">[[[ ranking['Item']['itemPrice'] ]]]<small>円</small></span>
+                <span class="with-help" data-tooltip="help-shipping" data-duitrack="help-shipping">
+                    <span v-if="ranking['Item']['postageFlag'] == 0" class="dui-tag -shipping">送料無料</span>
+                </span>
+            </div>
+        </div>
+    </div>
+</section>
 <!-- Recommendation Categories-->
 <section class="recommendation_categories mt-4 mb-4">
     <div class="d-flex justify-content-between">
@@ -187,3 +229,26 @@
     </div>
 </section>
 {% endblock %}  
+{% block scripts %}
+<script>
+    new Vue({
+        delimiters: ["[[[", "]]]"],
+        el: "#app",
+        data: {
+            rankings: []
+        },
+        methods: {
+
+        },
+        mounted() {
+            //表示後にやりたいことはここに書ける
+            var self = this;
+            axios
+                .get('/api/ranking?genreId=551942&hits=6')
+                .then(function (res) {
+                    self.rankings = res.data;
+                });
+        }
+    })
+</script>
+{% endblock %}
