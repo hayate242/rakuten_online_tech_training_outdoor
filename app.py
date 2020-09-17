@@ -8,14 +8,13 @@ import rakutenAPI as rakuten
 import json
 from flask import jsonify
 
-from models.models import Categories, Videos
+from models.models import Categories, Videos, Video_items
 
 app = Flask(__name__)
 app.config["JSON_AS_ASCII"] = False
 
 bootstrap = Bootstrap(app)
 fa = FontAwesome(app)
-
 
 @app.route('/')
 def index():
@@ -28,14 +27,16 @@ def index():
 def exercise():
     title = "Today's 5 min Exercise"
     videos = Videos.query.filter_by(Type='exercise').all()
-    return render_template('exercise.html', Title=title, videos=videos)
+    video_items = Video_items.query.filter_by(video_id='exercise').all()
+    return render_template('exercise.html', Title=title, videos=videos, video_items=video_items)
 
 
 @app.route('/recipe')
 def recipe():
     title = "Today's 5 min Recipe"
     videos = Videos.query.filter_by(Type='recipe').all()
-    return render_template('recipe.html', Title=title, videos=videos)
+    video_items = Video_items.query.filter_by(video_id='recipe').all()
+    return render_template('recipe.html', Title=title, videos=videos, video_items=video_items)
 
 
 @app.route('/api/category', methods=['GET'])
