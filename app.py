@@ -50,6 +50,8 @@ def rankingSearch():
     hits = request.args.get('hits')
     data = rakuten.ranking_API(ranking, hits)
     return jsonify(data)
+
+
 @app.route('/api/category/refresh', methods=['GET'])
 def refreshSearch():
     category = request.args.get('category')
