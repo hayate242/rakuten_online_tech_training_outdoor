@@ -33,7 +33,7 @@
     </div>
     <div class="row mt-4">
         <!-- No1 -->
-        <div class="col-3 offset-1" v-for="(ranking, index) in rankings">
+        <div class="col-3 offset-1 shadow-sm rounded" v-for="(ranking, index) in rankings">
             <figure>
                 <img v-bind:src="'/static/images/no1.jpg'" alt="" class="img-fluid mx-auto d-block" width="80px">
             </figure>
@@ -71,7 +71,40 @@
         <button type="button" class="btn btn-outline-info">refresh</button>
     </div>
     <div class="row mt-3 mb-3">
-        <div class="col-2" v-for="healthy_food in healthy_foods['Items']">
+        <div class="col-2 shadow-sm rounded" v-for="healthy_food in healthy_foods['Items']">
+            <figure>
+                <a v-bind:href="healthy_food['Item']['itemUrl']">
+                    <img v-bind:src="healthy_food['Item']['mediumImageUrls'][0]['imageUrl']"
+                        v-bind:alt="healthy_food['Item']['itemName']" class="img-fluid">
+                </a>
+            </figure>
+            <div class="">
+                <a v-bind:href="healthy_food['Item']['itemUrl']" class="d-block text-truncate">[[[
+                    healthy_food['Item']['itemName'] ]]]</a>
+                </p>
+            </div>
+            <div class="text-danger">
+                <span class="important">[[[ healthy_food['Item']['itemPrice'] ]]]<small>円</small></span>
+                <p v-if="healthy_food['Item']['postageFlag'] == 0" class="dui-tag -shipping">送料無料</p>
+            </div>
+            <div>
+                <i class="fas fa-store"></i>
+                <a class="text-secondary" v-bind:href="healthy_food['Item']['shopUrl']" data-track-action="shop">[[[
+                    healthy_food['Item']['shopName'] ]]]</a>
+            </div>
+        </div>
+    </div>
+    </div>
+</section>
+
+<!-- healthy food -->
+<section class="healty_food mt-5">
+    <div class="d-flex justify-content-between">
+        <h2>Healthy Food</h2>
+        <button type="button" class="btn btn-outline-info">refresh</button>
+    </div>
+    <div class="row mt-3 mb-3">
+        <div class="col-2 shadow-sm rounded" v-for="healthy_food in healthy_foods['Items']">
             <figure>
                 <a v-bind:href="healthy_food['Item']['itemUrl']">
                     <img v-bind:src="healthy_food['Item']['mediumImageUrls'][0]['imageUrl']"
