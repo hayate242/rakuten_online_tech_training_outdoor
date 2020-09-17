@@ -97,33 +97,133 @@
     </div>
 </section>
 
-<!-- healthy food -->
-<section class="healty_food mt-5">
+<!-- Exercise equipment -->
+<section class="exercise_equipments mt-5">
     <div class="d-flex justify-content-between">
-        <h2>Healthy Food</h2>
+        <h2>Exercise equipment</h2>
         <button type="button" class="btn btn-outline-info">refresh</button>
     </div>
     <div class="row mt-3 mb-3">
-        <div class="col-2 shadow-sm rounded" v-for="healthy_food in healthy_foods['Items']">
+        <div class="col-2 shadow-sm rounded" v-for="exercise_equipment in exercise_equipments['Items']">
             <figure>
-                <a v-bind:href="healthy_food['Item']['itemUrl']">
-                    <img v-bind:src="healthy_food['Item']['mediumImageUrls'][0]['imageUrl']"
-                        v-bind:alt="healthy_food['Item']['itemName']" class="img-fluid">
+                <a v-bind:href="exercise_equipment['Item']['itemUrl']">
+                    <img v-bind:src="exercise_equipment['Item']['mediumImageUrls'][0]['imageUrl']"
+                        v-bind:alt="exercise_equipment['Item']['itemName']" class="img-fluid">
                 </a>
             </figure>
             <div class="">
-                <a v-bind:href="healthy_food['Item']['itemUrl']" class="d-block text-truncate">[[[
-                    healthy_food['Item']['itemName'] ]]]</a>
+                <a v-bind:href="exercise_equipment['Item']['itemUrl']" class="d-block text-truncate">[[[
+                    exercise_equipment['Item']['itemName'] ]]]</a>
                 </p>
             </div>
             <div class="text-danger">
-                <span class="important">[[[ healthy_food['Item']['itemPrice'] ]]]<small>円</small></span>
-                <p v-if="healthy_food['Item']['postageFlag'] == 0" class="dui-tag -shipping">送料無料</p>
+                <span class="important">[[[ exercise_equipment['Item']['itemPrice'] ]]]<small>円</small></span>
+                <p v-if="exercise_equipment['Item']['postageFlag'] == 0" class="dui-tag -shipping">送料無料</p>
             </div>
             <div>
                 <i class="fas fa-store"></i>
-                <a class="text-secondary" v-bind:href="healthy_food['Item']['shopUrl']" data-track-action="shop">[[[
-                    healthy_food['Item']['shopName'] ]]]</a>
+                <a class="text-secondary" v-bind:href="exercise_equipment['Item']['shopUrl']"
+                    data-track-action="shop">[[[
+                    exercise_equipment['Item']['shopName'] ]]]</a>
+            </div>
+        </div>
+    </div>
+    </div>
+</section>
+
+<!-- Hygiene products -->
+<section class="hygiene_products mt-5">
+    <div class="d-flex justify-content-between">
+        <h2>Hygiene products</h2>
+        <button type="button" class="btn btn-outline-info">refresh</button>
+    </div>
+    <div class="row mt-3 mb-3">
+        <div class="col-2 shadow-sm rounded" v-for="hygiene_product in hygiene_products['Items']">
+            <figure>
+                <a v-bind:href="hygiene_product['Item']['itemUrl']">
+                    <img v-bind:src="hygiene_product['Item']['mediumImageUrls'][0]['imageUrl']"
+                        v-bind:alt="hygiene_product['Item']['itemName']" class="img-fluid">
+                </a>
+            </figure>
+            <div class="">
+                <a v-bind:href="hygiene_product['Item']['itemUrl']" class="d-block text-truncate">[[[
+                    hygiene_product['Item']['itemName'] ]]]</a>
+                </p>
+            </div>
+            <div class="text-danger">
+                <span class="important">[[[ hygiene_product['Item']['itemPrice'] ]]]<small>円</small></span>
+                <p v-if="hygiene_product['Item']['postageFlag'] == 0" class="dui-tag -shipping">送料無料</p>
+            </div>
+            <div>
+                <i class="fas fa-store"></i>
+                <a class="text-secondary" v-bind:href="hygiene_product['Item']['shopUrl']" data-track-action="shop">[[[
+                    hygiene_product['Item']['shopName'] ]]]</a>
+            </div>
+        </div>
+    </div>
+    </div>
+</section>
+
+<!-- Daily goods -->
+<section class="daily_goods mt-5">
+    <div class="d-flex justify-content-between">
+        <h2>Daily goods</h2>
+        <button type="button" class="btn btn-outline-info">refresh</button>
+    </div>
+    <div class="row mt-3 mb-3">
+        <div class="col-2 shadow-sm rounded" v-for="daily_good in daily_goods['Items']">
+            <figure>
+                <a v-bind:href="daily_good['Item']['itemUrl']">
+                    <img v-bind:src="daily_good['Item']['mediumImageUrls'][0]['imageUrl']"
+                        v-bind:alt="daily_good['Item']['itemName']" class="img-fluid">
+                </a>
+            </figure>
+            <div class="">
+                <a v-bind:href="daily_good['Item']['itemUrl']" class="d-block text-truncate">[[[
+                    daily_good['Item']['itemName'] ]]]</a>
+                </p>
+            </div>
+            <div class="text-danger">
+                <span class="important">[[[ daily_good['Item']['itemPrice'] ]]]<small>円</small></span>
+                <p v-if="daily_good['Item']['postageFlag'] == 0" class="dui-tag -shipping">送料無料</p>
+            </div>
+            <div>
+                <i class="fas fa-store"></i>
+                <a class="text-secondary" v-bind:href="daily_good['Item']['shopUrl']" data-track-action="shop">[[[
+                    daily_good['Item']['shopName'] ]]]</a>
+            </div>
+        </div>
+    </div>
+    </div>
+</section>
+
+<!-- Books -->
+<section class="books mt-5">
+    <div class="d-flex justify-content-between">
+        <h2>Books</h2>
+        <button type="button" class="btn btn-outline-info">refresh</button>
+    </div>
+    <div class="row mt-3 mb-3">
+        <div class="col-2 shadow-sm rounded" v-for="book in books['Items']">
+            <figure>
+                <a v-bind:href="book['Item']['itemUrl']">
+                    <img v-bind:src="book['Item']['mediumImageUrls'][0]['imageUrl']"
+                        v-bind:alt="book['Item']['itemName']" class="img-fluid">
+                </a>
+            </figure>
+            <div class="">
+                <a v-bind:href="book['Item']['itemUrl']" class="d-block text-truncate">[[[
+                    book['Item']['itemName'] ]]]</a>
+                </p>
+            </div>
+            <div class="text-danger">
+                <span class="important">[[[ book['Item']['itemPrice'] ]]]<small>円</small></span>
+                <p v-if="book['Item']['postageFlag'] == 0" class="dui-tag -shipping">送料無料</p>
+            </div>
+            <div>
+                <i class="fas fa-store"></i>
+                <a class="text-secondary" v-bind:href="book['Item']['shopUrl']" data-track-action="shop">[[[
+                    book['Item']['shopName'] ]]]</a>
             </div>
         </div>
     </div>
@@ -140,6 +240,10 @@
         data: {
             rankings: [],
             healthy_foods: [],
+            exercise_equipments: [],
+            hygiene_products: [],
+            daily_goods: [],
+            books: []
         },
         methods: {
             getRanking() {
@@ -155,8 +259,16 @@
                 axios
                     .get('/api/category?category=' + category + '&hits=6')
                     .then(function (res) {
-                        if (name == 'healthy_food') {
+                        if (name == 'healthy_foods') {
                             self.healthy_foods = res.data;
+                        } else if (name == 'exercise_equipments') {
+                            self.exercise_equipments = res.data;
+                        } else if (name == 'hygiene_products') {
+                            self.hygiene_products = res.data;
+                        } else if (name == 'daily_goods') {
+                            self.daily_goods = res.data;
+                        } else if (name == 'books') {
+                            self.books = res.data;
                         }
                     });
             }
@@ -164,7 +276,11 @@
         },
         mounted() {
             this.getRanking();
-            this.getCategory('健康', 'healthy_food');
+            this.getCategory('健康食品', 'healthy_foods');
+            this.getCategory('スポーツ・アウトドア', 'exercise_equipments');
+            this.getCategory('医薬品・コンタクト・介護', 'hygiene_products');
+            this.getCategory('日用品雑貨・文房具・手芸', 'daily_goods');
+            this.getCategory('本・雑誌・コミック', 'books');
         }
     })
 </script>
