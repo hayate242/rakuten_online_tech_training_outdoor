@@ -68,10 +68,11 @@
 <section class="healty_food mt-5">
     <div class="d-flex justify-content-between">
         <h2>Healthy Food</h2>
-        <button type="button" class="btn btn-outline-info">refresh</button>
+        <button type="button" class="btn btn-outline-info"
+            @click="refreshCategory('健康食品', 'healthy_foods');">refresh</button>
     </div>
     <div class="row mt-3 mb-3">
-        <div class="col-2 shadow-sm rounded" v-for="healthy_food in healthy_foods['Items']">
+        <div class="col-2 shadow-sm rounded" v-for="healthy_food in healthy_foods">
             <figure>
                 <a v-bind:href="healthy_food['Item']['itemUrl']">
                     <img v-bind:src="healthy_food['Item']['mediumImageUrls'][0]['imageUrl']"
@@ -101,10 +102,11 @@
 <section class="exercise_equipments mt-5">
     <div class="d-flex justify-content-between">
         <h2>Exercise equipment</h2>
-        <button type="button" class="btn btn-outline-info">refresh</button>
+        <button type="button" class="btn btn-outline-info"
+            @click="refreshCategory('スポーツ・アウトドア', 'exercise_equipments');">refresh</button>
     </div>
     <div class="row mt-3 mb-3">
-        <div class="col-2 shadow-sm rounded" v-for="exercise_equipment in exercise_equipments['Items']">
+        <div class="col-2 shadow-sm rounded" v-for="exercise_equipment in exercise_equipments">
             <figure>
                 <a v-bind:href="exercise_equipment['Item']['itemUrl']">
                     <img v-bind:src="exercise_equipment['Item']['mediumImageUrls'][0]['imageUrl']"
@@ -135,10 +137,11 @@
 <section class="hygiene_products mt-5">
     <div class="d-flex justify-content-between">
         <h2>Hygiene products</h2>
-        <button type="button" class="btn btn-outline-info">refresh</button>
+        <button type="button" class="btn btn-outline-info"
+            @click="refreshCategory('医薬品・コンタクト・介護', 'hygiene_products');">refresh</button>
     </div>
     <div class="row mt-3 mb-3">
-        <div class="col-2 shadow-sm rounded" v-for="hygiene_product in hygiene_products['Items']">
+        <div class="col-2 shadow-sm rounded" v-for="hygiene_product in hygiene_products">
             <figure>
                 <a v-bind:href="hygiene_product['Item']['itemUrl']">
                     <img v-bind:src="hygiene_product['Item']['mediumImageUrls'][0]['imageUrl']"
@@ -168,10 +171,11 @@
 <section class="daily_goods mt-5">
     <div class="d-flex justify-content-between">
         <h2>Daily goods</h2>
-        <button type="button" class="btn btn-outline-info">refresh</button>
+        <button type="button" class="btn btn-outline-info"
+            @click="refreshCategory('日用品雑貨・文房具・手芸', 'daily_goods');">refresh</button>
     </div>
     <div class="row mt-3 mb-3">
-        <div class="col-2 shadow-sm rounded" v-for="daily_good in daily_goods['Items']">
+        <div class="col-2 shadow-sm rounded" v-for="daily_good in daily_goods">
             <figure>
                 <a v-bind:href="daily_good['Item']['itemUrl']">
                     <img v-bind:src="daily_good['Item']['mediumImageUrls'][0]['imageUrl']"
@@ -201,10 +205,11 @@
 <section class="books mt-5">
     <div class="d-flex justify-content-between">
         <h2>Books</h2>
-        <button type="button" class="btn btn-outline-info">refresh</button>
+        <button type="button" class="btn btn-outline-info"
+            @click="refreshCategory('本・雑誌・コミック', 'books');">refresh</button>
     </div>
     <div class="row mt-3 mb-3">
-        <div class="col-2 shadow-sm rounded" v-for="book in books['Items']">
+        <div class="col-2 shadow-sm rounded" v-for="book in books">
             <figure>
                 <a v-bind:href="book['Item']['itemUrl']">
                     <img v-bind:src="book['Item']['mediumImageUrls'][0]['imageUrl']"
@@ -260,6 +265,25 @@
                     .get('/api/category?category=' + category + '&hits=6')
                     .then(function (res) {
                         if (name == 'healthy_foods') {
+                            self.healthy_foods = res.data;
+                        } else if (name == 'exercise_equipments') {
+                            self.exercise_equipments = res.data;
+                        } else if (name == 'hygiene_products') {
+                            self.hygiene_products = res.data;
+                        } else if (name == 'daily_goods') {
+                            self.daily_goods = res.data;
+                        } else if (name == 'books') {
+                            self.books = res.data;
+                        }
+                    });
+            },
+            refreshCategory(category, name) {
+                var self = this;
+                axios
+                    .get('/api/category/refresh?category=' + category + '&hits=6')
+                    .then(function (res) {
+                        if (name == 'healthy_foods') {
+                            console.log(res.data);
                             self.healthy_foods = res.data;
                         } else if (name == 'exercise_equipments') {
                             self.exercise_equipments = res.data;
