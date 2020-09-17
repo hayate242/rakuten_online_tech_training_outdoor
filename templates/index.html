@@ -34,10 +34,19 @@
     <div class="row mt-4">
         <!-- No1 -->
         <div class="col-3 offset-1 shadow-sm rounded" v-for="(ranking, index) in rankings">
-            <figure>
-                <img v-bind:src="'/static/images/no1.jpg'" alt="" class="img-fluid mx-auto d-block" width="80px">
+            <figure v-if="index == 0" class="mb-2">
+                <img src="{{ url_for('static', filename='images/no1.jpg') }}" alt="" class="img-fluid mx-auto d-block"
+                    width="80px">
             </figure>
-            <figure>
+            <figure v-if="index == 1" class="mb-2">
+                <img src="{{ url_for('static', filename='images/no2.jpg') }}" alt="" class="img-fluid mx-auto d-block"
+                    width="80px">
+            </figure>
+            <figure v-if="index == 2" class="mb-2">
+                <img src="{{ url_for('static', filename='images/no3.jpg') }}" alt="" class="img-fluid mx-auto d-block"
+                    width="80px">
+            </figure>
+            <figure class="text-center">
                 <a v-bind:href="ranking['Item']['itemUrl']">
                     <img v-bind:src="ranking['Item']['mediumImageUrls'][0]['imageUrl']"
                         v-bind:alt="ranking['Item']['itemName']" class="img-fluid">
@@ -73,7 +82,7 @@
     </div>
     <div class="row mt-3 mb-3">
         <div class="col-2 shadow-sm rounded" v-for="healthy_food in healthy_foods">
-            <figure>
+            <figure class="text-center">
                 <a v-bind:href="healthy_food['Item']['itemUrl']">
                     <img v-bind:src="healthy_food['Item']['mediumImageUrls'][0]['imageUrl']"
                         v-bind:alt="healthy_food['Item']['itemName']" class="img-fluid">
@@ -107,7 +116,7 @@
     </div>
     <div class="row mt-3 mb-3">
         <div class="col-2 shadow-sm rounded" v-for="exercise_equipment in exercise_equipments">
-            <figure>
+            <figure class="text-center">
                 <a v-bind:href="exercise_equipment['Item']['itemUrl']">
                     <img v-bind:src="exercise_equipment['Item']['mediumImageUrls'][0]['imageUrl']"
                         v-bind:alt="exercise_equipment['Item']['itemName']" class="img-fluid">
@@ -142,7 +151,7 @@
     </div>
     <div class="row mt-3 mb-3">
         <div class="col-2 shadow-sm rounded" v-for="hygiene_product in hygiene_products">
-            <figure>
+            <figure class="text-center">
                 <a v-bind:href="hygiene_product['Item']['itemUrl']">
                     <img v-bind:src="hygiene_product['Item']['mediumImageUrls'][0]['imageUrl']"
                         v-bind:alt="hygiene_product['Item']['itemName']" class="img-fluid">
@@ -176,7 +185,7 @@
     </div>
     <div class="row mt-3 mb-3">
         <div class="col-2 shadow-sm rounded" v-for="daily_good in daily_goods">
-            <figure>
+            <figure class="text-center">
                 <a v-bind:href="daily_good['Item']['itemUrl']">
                     <img v-bind:src="daily_good['Item']['mediumImageUrls'][0]['imageUrl']"
                         v-bind:alt="daily_good['Item']['itemName']" class="img-fluid">
@@ -210,7 +219,7 @@
     </div>
     <div class="row mt-3 mb-3">
         <div class="col-2 shadow-sm rounded" v-for="book in books">
-            <figure>
+            <figure class="text-center">
                 <a v-bind:href="book['Item']['itemUrl']">
                     <img v-bind:src="book['Item']['mediumImageUrls'][0]['imageUrl']"
                         v-bind:alt="book['Item']['itemName']" class="img-fluid">
