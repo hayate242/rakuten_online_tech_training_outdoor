@@ -302,6 +302,29 @@
     </div>
 </section>
 {% endfor %}
-<!-- </body> -->
+{% endblock %}
 
+{% block scripts %}
+<script>
+    new Vue({
+        el: "#app",
+        data: {
+            ranking: []
+        },
+        methods: {
+            sayHello() {
+                this.msg = "Hello!"
+            }
+        },
+        mounted() {
+            //表示後にやりたいことはここに書ける
+            var self = this;
+            axios
+                .get('/api/ranking?genreId=100987&hits=3')
+                .then(function (res) {
+                    self.ranking = res.data;
+                });
+        }
+    })
+</script>
 {% endblock %}
