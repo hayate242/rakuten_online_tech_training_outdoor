@@ -7,7 +7,7 @@
         <h3>Best Selling</h3>
     </div>
     <div class="row mt-3">
-        <div class="col-2" v-for="(ranking,index) in rankings">
+        <div class="col-2 shadow-sm rounded" v-for="(ranking,index) in rankings">
             <figure v-if="index == 0" class="mb-0" class="text-center">
                 <img src="{{ url_for('static', filename='images/no1.jpg') }}" alt="" class="img-fluid mx-auto d-block"
                     width="50px">
@@ -22,7 +22,7 @@
             </figure>
             <div v-if="index >= 3" style="padding-top: 40.75px">
             </div>
-            <figure class="text-center">
+            <figure class="text-center mt-2">
                 <a v-bind:href="ranking['Item']['itemUrl']">
                     <img v-bind:src="ranking['Item']['mediumImageUrls'][0]['imageUrl']"
                         v-bind:alt="ranking['Item']['itemName']" class="img-fluid">
