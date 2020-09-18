@@ -7,14 +7,15 @@ import requests
 import rakutenAPI as rakuten
 import json
 from flask import jsonify
-
 from models.models import Categories, Videos, Video_items
+import random
 
 app = Flask(__name__)
 app.config["JSON_AS_ASCII"] = False
 
 bootstrap = Bootstrap(app)
 fa = FontAwesome(app)
+
 
 @app.route('/')
 def index():
@@ -44,7 +45,7 @@ def categorySearch():
     category = request.args.get('category')
     hits = request.args.get('hits')
     data = rakuten.item_Search_API(category, hits)
-    return jsonify(data)
+    return jsonify(data['Items'])
 
 
 @app.route('/api/ranking', methods=['GET'])
@@ -53,3 +54,15 @@ def rankingSearch():
     hits = request.args.get('hits')
     data = rakuten.ranking_API(ranking, hits)
     return jsonify(data)
+
+
+@app.route('/api/category/refresh', methods=['GET'])
+def refreshSearch():
+    category = request.args.get('category')
+    data = rakuten.item_Search_API(category, 30)
+    data = random.sample(data["Items"], 6)
+    return jsonify(data)
+
+
+if __name__ == "__main__":
+    app.run(debug=True)
