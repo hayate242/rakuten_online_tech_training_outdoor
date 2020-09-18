@@ -6,15 +6,54 @@ from datetime import datetime
 class Video_items(Base):
     __tablename__ = 'video_items'
     id = Column(Integer, primary_key=True)
-    video_id = Column(Integer)
-    item_id = Column(Integer)
-    item_title = Column(Text)
-    item_url = Column(Text)
+    video_id = Column(Text)
+    item_image_1 = Column(Text)
+    item_name_1 = Column(Text)
+    item_url_1 = Column(Text)
+    item_price_1 = Column(Text)
+    item_image_2 = Column(Text)
+    item_name_2 = Column(Text)
+    item_url_2 = Column(Text)
+    item_price_2 = Column(Text)
+    item_image_3 = Column(Text)
+    item_name_3 = Column(Text)
+    item_url_3 = Column(Text)
+    item_price_3 = Column(Text)
+    item_image_4 = Column(Text)
+    item_name_4 = Column(Text)
+    item_url_4 = Column(Text)
+    item_price_4 = Column(Text)
+    item_image_5 = Column(Text)
+    item_name_5 = Column(Text)
+    item_url_5 = Column(Text)
+    item_price_5 = Column(Text)
 
-    def __init__(self, video_id=None, item_id=None, item_title=None, item_url=None):
-        self.item_id = item_id
-        self.item_title = item_title
-        self.item_url = item_url
+    def __init__(self, video_id=None, item_image_1=None, item_name_1=None, item_url_1=None, item_price_1=None,
+                                    item_image_2=None, item_name_2=None, item_url_2=None, item_price_2=None,
+                                    item_image_3=None, item_name_3=None, item_url_3=None, item_price_3=None,
+                                    item_image_4=None, item_name_4=None, item_url_4=None, item_price_4=None,
+                                    item_image_5=None, item_name_5=None, item_url_5=None, item_price_5=None):
+        self.video_id = video_id
+        self.item_image_1 = item_image_1
+        self.item_name_1 = item_name_1
+        self.item_url_1 = item_url_1
+        self.item_price_1 = item_price_1
+        self.item_image_2 = item_image_2
+        self.item_name_2 = item_name_2
+        self.item_url_2 = item_url_2
+        self.item_price_2 = item_price_2
+        self.item_image_3 = item_image_3
+        self.item_name_3 = item_name_3
+        self.item_url_3 = item_url_3
+        self.item_price_3 = item_price_3
+        self.item_image_4 = item_image_4
+        self.item_name_4 = item_name_4
+        self.item_url_4 = item_url_4
+        self.item_price_4 = item_price_4
+        self.item_image_5 = item_image_5
+        self.item_name_5 = item_name_5
+        self.item_url_5 = item_url_5
+        self.item_price_5 = item_price_5
     # def __repr__(self):
     #    return '<Title %r>' % (self.title)
 

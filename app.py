@@ -7,9 +7,9 @@ import requests
 import rakutenAPI as rakuten
 import json
 from flask import jsonify
-
-from models.models import Categories
+from models.models import Categories, Videos, Video_items
 import random
+
 app = Flask(__name__)
 app.config["JSON_AS_ASCII"] = False
 
@@ -27,13 +27,17 @@ def index():
 @app.route('/exercise')
 def exercise():
     title = "Today's 5 min Exercise"
-    return render_template('exercise.html', Title=title)
+    videos = Videos.query.filter_by(Type='exercise').all()
+    video_items = Video_items.query.filter_by(video_id='exercise').all()
+    return render_template('exercise.html', Title=title, videos=videos, video_items=video_items)
 
 
 @app.route('/recipe')
 def recipe():
     title = "Today's 5 min Recipe"
-    return render_template('recipe.html', Title=title)
+    videos = Videos.query.filter_by(Type='recipe').all()
+    video_items = Video_items.query.filter_by(video_id='recipe').all()
+    return render_template('recipe.html', Title=title, videos=videos, video_items=video_items)
 
 
 @app.route('/api/category', methods=['GET'])
