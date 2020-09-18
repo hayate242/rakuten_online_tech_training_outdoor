@@ -19,7 +19,7 @@ fa = FontAwesome(app)
 
 @app.route('/')
 def index():
-    title = 'Healthcare'
+    title = 'All you need is Healthcare'
     categories = Categories.query.all()
     return render_template('index.html', Title=title, categories=categories)
 

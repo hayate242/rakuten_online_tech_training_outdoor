@@ -7,29 +7,29 @@
         <h3>Best Selling</h3>
     </div>
     <div class="row mt-3">
-        <div class="col-2" v-for="(ranking,index) in rankings">
-            <figure v-if="index == 0" class="mb-0">
-                <img src="{{ url_for('static', filename='images/no1.jpg') }}" alt=""
-                    class="img-fluid mx-auto d-block" width="50px">
+        <div class="col-2 shadow-sm rounded" v-for="(ranking,index) in rankings">
+            <figure v-if="index == 0" class="mb-0" class="text-center">
+                <img src="{{ url_for('static', filename='images/no1.jpg') }}" alt="" class="img-fluid mx-auto d-block"
+                    width="50px">
             </figure>
-            <figure v-if="index == 1" class="mb-0">
-                <img src="{{ url_for('static', filename='images/no2.jpg') }}" alt=""
-                    class="img-fluid mx-auto d-block" width="50px">
+            <figure v-if="index == 1" class="mb-0" class="text-center">
+                <img src="{{ url_for('static', filename='images/no2.jpg') }}" alt="" class="img-fluid mx-auto d-block"
+                    width="50px">
             </figure>
-            <figure v-if="index == 2" class="mb-0">
-                <img src="{{ url_for('static', filename='images/no3.jpg') }}" alt=""
-                    class="img-fluid mx-auto d-block" width="50px">
+            <figure v-if="index == 2" class="mb-0" class="text-center">
+                <img src="{{ url_for('static', filename='images/no3.jpg') }}" alt="" class="img-fluid mx-auto d-block"
+                    width="50px">
             </figure>
             <div v-if="index >= 3" style="padding-top: 40.75px">
             </div>
-            <figure>
+            <figure class="text-center mt-2">
                 <a v-bind:href="ranking['Item']['itemUrl']">
                     <img v-bind:src="ranking['Item']['mediumImageUrls'][0]['imageUrl']"
                         v-bind:alt="ranking['Item']['itemName']" class="img-fluid">
                 </a>
             </figure>
-            <div class="">
-                <p>
+            <div>
+                <p><span class="dui-tag -pr">PR</span>
                     <a v-bind:href="ranking['Item']['itemUrl']" class="d-block text-truncate">[[[
                         ranking['Item']['itemName'] ]]]</a>
                 </p>
@@ -50,185 +50,255 @@
     </div>
     <div class="row mt-1">
         <div class="col-2 pr-0">
-            <figure  class="mb-0">
-                <img src="{{ url_for('static', filename='images/cat_1.png') }}" alt=""
-                    class="img-fluid mx-auto d-block" width="200px">
+            <figure class="mb-0" class="text-center">
+                <img src="{{ url_for('static', filename='images/cat_1.png') }}" alt="" class="img-fluid mx-auto d-block"
+                    width="200px">
             </figure>
             <div>
                 <nav class="navbar bg-white p-0">
                     <ul class="navbar-nav">
                         <li class="nav-item">
-                            <a style="font-size:10px" class="nav-link p-0" href="https://www.rakuten.co.jp/category/551932/?l-id=sprt_column_outdoor_01"><i class="fa fa-caret-right"></i> ウェア</a>
+                            <a style="font-size:10px" class="nav-link p-0"
+                                href="https://www.rakuten.co.jp/category/551932/?l-id=sprt_column_outdoor_01"><i
+                                    class="fa fa-caret-right"></i> ウェア</a>
                         </li>
                         <li class="nav-item">
-                            <a style="font-size:10px" class="nav-link p-0" href="https://www.rakuten.co.jp/category/402289/?l-id=sprt_column_outdoor_02"><i class="fa fa-caret-right"></i> バッグ</a>
+                            <a style="font-size:10px" class="nav-link p-0"
+                                href="https://www.rakuten.co.jp/category/402289/?l-id=sprt_column_outdoor_02"><i
+                                    class="fa fa-caret-right"></i> バッグ</a>
                         </li>
                         <li class="nav-item">
-                            <a style="font-size:10px" class="nav-link p-0" href="https://www.rakuten.co.jp/category/201874/?l-id=sprt_column_outdoor_03"><i class="fa fa-caret-right"></i> テント・タープ</a>
+                            <a style="font-size:10px" class="nav-link p-0"
+                                href="https://www.rakuten.co.jp/category/201874/?l-id=sprt_column_outdoor_03"><i
+                                    class="fa fa-caret-right"></i> テント・タープ</a>
                         </li>
                         <li class="nav-item">
-                            <a style="font-size:10px" class="nav-link p-0" href="https://search.rakuten.co.jp/search/mall/-/402279/?l-id=sprt_column_outdoor_04"><i class="fa fa-caret-right"></i> 水筒・ボトル</a>
+                            <a style="font-size:10px" class="nav-link p-0"
+                                href="https://search.rakuten.co.jp/search/mall/-/402279/?l-id=sprt_column_outdoor_04"><i
+                                    class="fa fa-caret-right"></i> 水筒・ボトル</a>
                         </li>
                         <li class="nav-item">
-                            <a style="font-size:10px" class="nav-link p-0" href="https://search.rakuten.co.jp/search/mall/-/201887/?l-id=sprt_column_outdoor_05"><i class="fa fa-caret-right"></i> キャンプ用寝具</a>
+                            <a style="font-size:10px" class="nav-link p-0"
+                                href="https://search.rakuten.co.jp/search/mall/-/201887/?l-id=sprt_column_outdoor_05"><i
+                                    class="fa fa-caret-right"></i> キャンプ用寝具</a>
                         </li>
                     </ul>
-                  </nav>
+                </nav>
             </div>
         </div>
         <div class="col-2 pr-0">
-            <figure  class="mb-0">
-                <img src="{{ url_for('static', filename='images/cat_2.png') }}" alt=""
-                    class="img-fluid mx-auto d-block" width="200px">
+            <figure class="mb-0" class="text-center">
+                <img src="{{ url_for('static', filename='images/cat_2.png') }}" alt="" class="img-fluid mx-auto d-block"
+                    width="200px">
             </figure>
             <div>
                 <nav class="navbar bg-white p-0">
                     <ul class="navbar-nav">
                         <li class="nav-item">
-                            <a style="font-size:10px" class="nav-link p-0" href="https://www.rakuten.co.jp/category/302491/?l-id=sprt_column_wear_01"><i class="fa fa-caret-right"></i> ジャージ</a>
+                            <a style="font-size:10px" class="nav-link p-0"
+                                href="https://www.rakuten.co.jp/category/302491/?l-id=sprt_column_wear_01"><i
+                                    class="fa fa-caret-right"></i> ジャージ</a>
                         </li>
                         <li class="nav-item">
-                            <a style="font-size:10px" class="nav-link p-0" href="https://search.rakuten.co.jp/search/mall/-/302503/?l-id=sprt_column_wear_02"><i class="fa fa-caret-right"></i> ウィンドブレーカー</a>
+                            <a style="font-size:10px" class="nav-link p-0"
+                                href="https://search.rakuten.co.jp/search/mall/-/302503/?l-id=sprt_column_wear_02"><i
+                                    class="fa fa-caret-right"></i> ウィンドブレーカー</a>
                         </li>
                         <li class="nav-item">
-                            <a style="font-size:10px" class="nav-link p-0" href="https://search.rakuten.co.jp/search/mall/-/208118/?l-id=sprt_column_wear_03"><i class="fa fa-caret-right"></i> スポーツバッグ</a>
+                            <a style="font-size:10px" class="nav-link p-0"
+                                href="https://search.rakuten.co.jp/search/mall/-/208118/?l-id=sprt_column_wear_03"><i
+                                    class="fa fa-caret-right"></i> スポーツバッグ</a>
                         </li>
                         <li class="nav-item">
-                            <a style="font-size:10px" class="nav-link p-0" href="https://search.rakuten.co.jp/search/mall/-/554978/?l-id=sprt_column_wear_04"><i class="fa fa-caret-right"></i> 機能性インナー</a>
+                            <a style="font-size:10px" class="nav-link p-0"
+                                href="https://search.rakuten.co.jp/search/mall/-/554978/?l-id=sprt_column_wear_04"><i
+                                    class="fa fa-caret-right"></i> 機能性インナー</a>
                         </li>
                         <li class="nav-item">
-                            <a style="font-size:10px" class="nav-link p-0" href="https://search.rakuten.co.jp/search/mall/-/208124/?l-id=sprt_column_wear_05"><i class="fa fa-caret-right"></i> サングラス</a>
+                            <a style="font-size:10px" class="nav-link p-0"
+                                href="https://search.rakuten.co.jp/search/mall/-/208124/?l-id=sprt_column_wear_05"><i
+                                    class="fa fa-caret-right"></i> サングラス</a>
                         </li>
                         <li class="nav-item">
-                            <a style="font-size:10px" class="nav-link p-0" href="https://www.rakuten.co.jp/category/201802/?l-id=sprt_column_wear_06"><i class="fa fa-caret-right"></i> サッカー（ウェア）</a>
+                            <a style="font-size:10px" class="nav-link p-0"
+                                href="https://www.rakuten.co.jp/category/201802/?l-id=sprt_column_wear_06"><i
+                                    class="fa fa-caret-right"></i> サッカー（ウェア）</a>
                         </li>
                         <li class="nav-item">
-                            <a style="font-size:10px" class="nav-link p-0" href="https://www.rakuten.co.jp/category/201813/?l-id=sprt_column_wear_07"><i class="fa fa-caret-right"></i> サッカー（シューズ）</a>
+                            <a style="font-size:10px" class="nav-link p-0"
+                                href="https://www.rakuten.co.jp/category/201813/?l-id=sprt_column_wear_07"><i
+                                    class="fa fa-caret-right"></i> サッカー（シューズ）</a>
                         </li>
                         <li class="nav-item">
-                            <a style="font-size:10px" class="nav-link p-0" href="https://www.rakuten.co.jp/category/201794/?l-id=sprt_column_wear_08"><i class="fa fa-caret-right"></i> 野球（ウェア）</a>
+                            <a style="font-size:10px" class="nav-link p-0"
+                                href="https://www.rakuten.co.jp/category/201794/?l-id=sprt_column_wear_08"><i
+                                    class="fa fa-caret-right"></i> 野球（ウェア）</a>
                         </li>
                     </ul>
-                  </nav>
+                </nav>
             </div>
         </div>
         <div class="col-2 pr-0">
-            <figure  class="mb-0">
-                <img src="{{ url_for('static', filename='images/cat_3.png') }}" alt=""
-                    class="img-fluid mx-auto d-block" width="200px">
+            <figure class="mb-0" class="text-center">
+                <img src="{{ url_for('static', filename='images/cat_3.png') }}" alt="" class="img-fluid mx-auto d-block"
+                    width="200px">
             </figure>
             <div>
                 <nav class="navbar bg-white p-0">
                     <ul class="navbar-nav">
                         <li class="nav-item">
-                            <a style="font-size:10px" class="nav-link p-0" href="https://www.rakuten.co.jp/category/509058/?l-id=sprt_column_running_01"><i class="fa fa-caret-right"></i> ランニングシューズ</a>
+                            <a style="font-size:10px" class="nav-link p-0"
+                                href="https://www.rakuten.co.jp/category/509058/?l-id=sprt_column_running_01"><i
+                                    class="fa fa-caret-right"></i> ランニングシューズ</a>
                         </li>
                         <li class="nav-item">
-                            <a style="font-size:10px" class="nav-link p-0" href="https://search.rakuten.co.jp/search/mall?sitem=%E3%83%A1%E3%83%B3%E3%82%BA&g=509066&v=2&s=1&p=1&min=&max=&sf=0&st=A&nitem=&myButton.x=0&myButton.y=0&l-id=sprt_column_running_02"><i class="fa fa-caret-right"></i> メンズウェア</a>
+                            <a style="font-size:10px" class="nav-link p-0"
+                                href="https://search.rakuten.co.jp/search/mall?sitem=%E3%83%A1%E3%83%B3%E3%82%BA&g=509066&v=2&s=1&p=1&min=&max=&sf=0&st=A&nitem=&myButton.x=0&myButton.y=0&l-id=sprt_column_running_02"><i
+                                    class="fa fa-caret-right"></i> メンズウェア</a>
                         </li>
                         <li class="nav-item">
-                            <a style="font-size:10px" class="nav-link p-0" href="https://search.rakuten.co.jp/search/mall?sitem=%E3%83%AC%E3%83%87%E3%82%A3%E3%83%BC%E3%82%B9&g=509066&v=2&s=1&p=1&min=&max=&sf=0&st=A&nitem=&myButton.x=0&myButton.y=0&l-id=sprt_column_running_03"><i class="fa fa-caret-right"></i> レディースウェア</a>
+                            <a style="font-size:10px" class="nav-link p-0"
+                                href="https://search.rakuten.co.jp/search/mall?sitem=%E3%83%AC%E3%83%87%E3%82%A3%E3%83%BC%E3%82%B9&g=509066&v=2&s=1&p=1&min=&max=&sf=0&st=A&nitem=&myButton.x=0&myButton.y=0&l-id=sprt_column_running_03"><i
+                                    class="fa fa-caret-right"></i> レディースウェア</a>
                         </li>
                         <li class="nav-item">
-                            <a style="font-size:10px" class="nav-link p-0" href="https://search.rakuten.co.jp/search/mall?sitem=%E6%A9%9F%E8%83%BD%E6%80%A7%E3%82%BF%E3%82%A4%E3%83%84&g=509066&v=2&s=1&p=1&min=&max=&sf=0&st=A&nitem=&myButton.x=0&myButton.y=0&l-id=sprt_column_running_04"><i class="fa fa-caret-right"></i> 機能性タイツ</a>
+                            <a style="font-size:10px" class="nav-link p-0"
+                                href="https://search.rakuten.co.jp/search/mall?sitem=%E6%A9%9F%E8%83%BD%E6%80%A7%E3%82%BF%E3%82%A4%E3%83%84&g=509066&v=2&s=1&p=1&min=&max=&sf=0&st=A&nitem=&myButton.x=0&myButton.y=0&l-id=sprt_column_running_04"><i
+                                    class="fa fa-caret-right"></i> 機能性タイツ</a>
                         </li>
                         <li class="nav-item">
-                            <a style="font-size:10px" class="nav-link p-0" href="https://search.rakuten.co.jp/search/mall/%E3%82%A6%E3%82%A8%E3%82%B9%E3%83%88%E3%83%9D%E3%83%BC%E3%83%81/%E3%82%AE%E3%82%A2-509074/p.1-s.1-sf.0-st.A-v.3?x=0&l-id=sprt_column_running_05"><i class="fa fa-caret-right"></i> ウエストポーチ</a>
+                            <a style="font-size:10px" class="nav-link p-0"
+                                href="https://search.rakuten.co.jp/search/mall/%E3%82%A6%E3%82%A8%E3%82%B9%E3%83%88%E3%83%9D%E3%83%BC%E3%83%81/%E3%82%AE%E3%82%A2-509074/p.1-s.1-sf.0-st.A-v.3?x=0&l-id=sprt_column_running_05"><i
+                                    class="fa fa-caret-right"></i> ウエストポーチ</a>
                         </li>
                     </ul>
-                  </nav>
+                </nav>
             </div>
         </div>
         <div class="col-2 pr-0">
-            <figure  class="mb-0">
-                <img src="{{ url_for('static', filename='images/cat_4.png') }}" alt=""
-                    class="img-fluid mx-auto d-block" width="200px">
+            <figure class="mb-0">
+                <img src="{{ url_for('static', filename='images/cat_4.png') }}" alt="" class="img-fluid mx-auto d-block"
+                    width="200px">
             </figure>
             <div>
                 <nav class="navbar bg-white p-0">
                     <ul class="navbar-nav">
                         <li class="nav-item">
-                            <a style="font-size:10px" class="nav-link p-0" href="https://search.rakuten.co.jp/search/mall/-/302202/?l-id=sprt_column_bicycle_01"><i class="fa fa-caret-right"></i> 電動アシスト自転車</a>
+                            <a style="font-size:10px" class="nav-link p-0"
+                                href="https://search.rakuten.co.jp/search/mall/-/302202/?l-id=sprt_column_bicycle_01"><i
+                                    class="fa fa-caret-right"></i> 電動アシスト自転車</a>
                         </li>
                         <li class="nav-item">
-                            <a style="font-size:10px" class="nav-link p-0" href="https://search.rakuten.co.jp/search/mall/-/201683/?l-id=sprt_column_bicycle_02"><i class="fa fa-caret-right"></i> 折りたたみ自転車</a>
+                            <a style="font-size:10px" class="nav-link p-0"
+                                href="https://search.rakuten.co.jp/search/mall/-/201683/?l-id=sprt_column_bicycle_02"><i
+                                    class="fa fa-caret-right"></i> 折りたたみ自転車</a>
                         </li>
                         <li class="nav-item">
-                            <a style="font-size:10px" class="nav-link p-0" href="https://search.rakuten.co.jp/search/mall/-/204915/?l-id=sprt_column_bicycle_03"><i class="fa fa-caret-right"></i> クロスパイク</a>
+                            <a style="font-size:10px" class="nav-link p-0"
+                                href="https://search.rakuten.co.jp/search/mall/-/204915/?l-id=sprt_column_bicycle_03"><i
+                                    class="fa fa-caret-right"></i> クロスパイク</a>
                         </li>
                         <li class="nav-item">
-                            <a style="font-size:10px" class="nav-link p-0" href="https://www.rakuten.co.jp/category/207950/?l-id=sprt_column_bicycle_06"><i class="fa fa-caret-right"></i> ロードバイク</a>
+                            <a style="font-size:10px" class="nav-link p-0"
+                                href="https://www.rakuten.co.jp/category/207950/?l-id=sprt_column_bicycle_06"><i
+                                    class="fa fa-caret-right"></i> ロードバイク</a>
                         </li>
                         <li class="nav-item">
-                            <a style="font-size:10px" class="nav-link p-0" href="https://www.rakuten.co.jp/category/201695/?l-id=sprt_column_bicycle_04"><i class="fa fa-caret-right"></i> アクセサリー・グッズ</a>
+                            <a style="font-size:10px" class="nav-link p-0"
+                                href="https://www.rakuten.co.jp/category/201695/?l-id=sprt_column_bicycle_04"><i
+                                    class="fa fa-caret-right"></i> アクセサリー・グッズ</a>
                         </li>
                         <li class="nav-item">
-                            <a style="font-size:10px" class="nav-link p-0" href="https://search.rakuten.co.jp/search/mall/-/563145/?l-id=sprt_column_bicycle_05"><i class="fa fa-caret-right"></i> パーツ</a>
+                            <a style="font-size:10px" class="nav-link p-0"
+                                href="https://search.rakuten.co.jp/search/mall/-/563145/?l-id=sprt_column_bicycle_05"><i
+                                    class="fa fa-caret-right"></i> パーツ</a>
                         </li>
                     </ul>
-                  </nav>
+                </nav>
             </div>
         </div>
         <div class="col-2 pr-0">
-            <figure  class="mb-0">
-                <img src="{{ url_for('static', filename='images/cat_5.png') }}" alt=""
-                    class="img-fluid mx-auto d-block" width="200px">
+            <figure class="mb-0">
+                <img src="{{ url_for('static', filename='images/cat_5.png') }}" alt="" class="img-fluid mx-auto d-block"
+                    width="200px">
             </figure>
             <div>
                 <nav class="navbar bg-white p-0">
                     <ul class="navbar-nav">
                         <li class="nav-item">
-                            <a style="font-size:10px" class="nav-link p-0" href="https://search.rakuten.co.jp/search/mall/-/201899/?l-id=sprt_column_fishing_01"><i class="fa fa-caret-right"></i> ロッド・竿</a>
+                            <a style="font-size:10px" class="nav-link p-0"
+                                href="https://search.rakuten.co.jp/search/mall/-/201899/?l-id=sprt_column_fishing_01"><i
+                                    class="fa fa-caret-right"></i> ロッド・竿</a>
                         </li>
                         <li class="nav-item">
-                            <a style="font-size:10px" class="nav-link p-0" href="https://search.rakuten.co.jp/search/mall/-/201916/?l-id=sprt_column_fishing_02"><i class="fa fa-caret-right"></i> ルアー</a>
+                            <a style="font-size:10px" class="nav-link p-0"
+                                href="https://search.rakuten.co.jp/search/mall/-/201916/?l-id=sprt_column_fishing_02"><i
+                                    class="fa fa-caret-right"></i> ルアー</a>
                         </li>
                         <li class="nav-item">
-                            <a style="font-size:10px" class="nav-link p-0" href="https://search.rakuten.co.jp/search/mall/-/201912/?l-id=sprt_column_fishing_03"><i class="fa fa-caret-right"></i> リール</a>
+                            <a style="font-size:10px" class="nav-link p-0"
+                                href="https://search.rakuten.co.jp/search/mall/-/201912/?l-id=sprt_column_fishing_03"><i
+                                    class="fa fa-caret-right"></i> リール</a>
                         </li>
                         <li class="nav-item">
-                            <a style="font-size:10px" class="nav-link p-0" href="https://search.rakuten.co.jp/search/mall/-/111966/?l-id=sprt_column_fishing_04"><i class="fa fa-caret-right"></i> 小物（針・ライン・仕掛け・ウキ）</a>
+                            <a style="font-size:10px" class="nav-link p-0"
+                                href="https://search.rakuten.co.jp/search/mall/-/111966/?l-id=sprt_column_fishing_04"><i
+                                    class="fa fa-caret-right"></i> 小物（針・ライン・仕掛け・ウキ）</a>
                         </li>
                         <li class="nav-item">
-                            <a style="font-size:10px" class="nav-link p-0" href="https://search.rakuten.co.jp/search/mall/-/201919/?l-id=sprt_column_fishing_05"><i class="fa fa-caret-right"></i> ウェア</a>
+                            <a style="font-size:10px" class="nav-link p-0"
+                                href="https://search.rakuten.co.jp/search/mall/-/201919/?l-id=sprt_column_fishing_05"><i
+                                    class="fa fa-caret-right"></i> ウェア</a>
                         </li>
                     </ul>
-                  </nav>
+                </nav>
             </div>
         </div>
         <div class="col-2 pr-0">
-            <figure  class="mb-0">
-                <img src="{{ url_for('static', filename='images/cat_6.png') }}" alt=""
-                    class="img-fluid mx-auto d-block" width="200px">
+            <figure class="mb-0">
+                <img src="{{ url_for('static', filename='images/cat_6.png') }}" alt="" class="img-fluid mx-auto d-block"
+                    width="200px">
             </figure>
             <div>
                 <nav class="navbar bg-white p-0">
                     <ul class="navbar-nav">
                         <li class="nav-item">
-                            <a style="font-size:10px" class="nav-link p-0" href="https://search.rakuten.co.jp/search/mall/-/200169/?l-id=sprt_column_club_01"><i class="fa fa-caret-right"></i> サッカー</a>
+                            <a style="font-size:10px" class="nav-link p-0"
+                                href="https://search.rakuten.co.jp/search/mall/-/200169/?l-id=sprt_column_club_01"><i
+                                    class="fa fa-caret-right"></i> サッカー</a>
                         </li>
                         <li class="nav-item">
-                            <a style="font-size:10px" class="nav-link p-0" href="https://search.rakuten.co.jp/search/mall/-/200168/?l-id=sprt_column_club_02"><i class="fa fa-caret-right"></i> 野球</a>
+                            <a style="font-size:10px" class="nav-link p-0"
+                                href="https://search.rakuten.co.jp/search/mall/-/200168/?l-id=sprt_column_club_02"><i
+                                    class="fa fa-caret-right"></i> 野球</a>
                         </li>
                         <li class="nav-item">
-                            <a style="font-size:10px" class="nav-link p-0" href="https://search.rakuten.co.jp/search/mall/-/201959/?l-id=sprt_column_club_03"><i class="fa fa-caret-right"></i> バスケットボール</a>
+                            <a style="font-size:10px" class="nav-link p-0"
+                                href="https://search.rakuten.co.jp/search/mall/-/201959/?l-id=sprt_column_club_03"><i
+                                    class="fa fa-caret-right"></i> バスケットボール</a>
                         </li>
                         <li class="nav-item">
-                            <a style="font-size:10px" class="nav-link p-0" href="https://search.rakuten.co.jp/search/mall/-/100558/?l-id=sprt_column_club_04"><i class="fa fa-caret-right"></i> テニス</a>
+                            <a style="font-size:10px" class="nav-link p-0"
+                                href="https://search.rakuten.co.jp/search/mall/-/100558/?l-id=sprt_column_club_04"><i
+                                    class="fa fa-caret-right"></i> テニス</a>
                         </li>
                         <li class="nav-item">
-                            <a style="font-size:10px" class="nav-link p-0" href="https://search.rakuten.co.jp/search/mall/-/201950/?l-id=sprt_column_club_05"><i class="fa fa-caret-right"></i> バトミントン</a>
+                            <a style="font-size:10px" class="nav-link p-0"
+                                href="https://search.rakuten.co.jp/search/mall/-/201950/?l-id=sprt_column_club_05"><i
+                                    class="fa fa-caret-right"></i> バトミントン</a>
                         </li>
                         <li class="nav-item">
-                            <a style="font-size:10px" class="nav-link p-0" href="https://search.rakuten.co.jp/search/mall/-/201963/?l-id=sprt_column_club_06"><i class="fa fa-caret-right"></i> バレーボール</a>
+                            <a style="font-size:10px" class="nav-link p-0"
+                                href="https://search.rakuten.co.jp/search/mall/-/201963/?l-id=sprt_column_club_06"><i
+                                    class="fa fa-caret-right"></i> バレーボール</a>
                         </li>
                     </ul>
-                  </nav>
+                </nav>
             </div>
         </div>
     </div>
 </section>
-{% endblock %}  
+{% endblock %}
 {% block scripts %}
 <script>
     new Vue({

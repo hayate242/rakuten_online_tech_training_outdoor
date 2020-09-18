@@ -9,22 +9,29 @@
     <div class="d-flex justify-content-around mt-4">
         <!-- Left side -->
         <div class="col-7">
-            <iframe width="640" height="360" src="{{ videos[0].Youtube_link }}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+            <iframe width="640" height="360" src="{{ videos[0].Youtube_link }}" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen>
             </iframe>
         </div>
         <!-- Right side -->
         <div class="col-5 p-0">
             {% for video in videos[1:] %}
             <div class="d-flex justify-content-around mt-0">
-                <div class="mt-2">
-                    <iframe width="150" height="90" src="{{ video.Youtube_link }}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
-                    </iframe> 
+                <div class="mt-3">
+                    <iframe width="150" height="90" src="{{ video.Youtube_link }}" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen>
+                    </iframe>
                 </div>
-                <div>
-                    <abbr style="font-size:9px"><abbr class="font-italic font-weight-bold">Date:</abbr> {{ video.uploaded_at }}
-                    <!-- <p style="font-size:9px inline-height:0px" class="mb-0"><abbr class="font-italic">Date: </abbr>{{ video.uploaded_at }}</p>   -->
-                    <p style="font-size:10px" class="m-0"><abbr class="font-italic font-weight-bold">Title: </abbr>{{ video.video_title }}</p> 
-                    <p style="font-size:10px;" class="m-0"><abbr class="font-italic font-weight-bold">Description: </abbr>{{ video.explain_text }} </p>
+                <div class="mt-2 ml-1">
+                    <abbr style="font-size:9px"><abbr class="font-italic font-weight-bold">Date:</abbr>
+                        {{ video.uploaded_at }}
+                        <!-- <p style="font-size:9px inline-height:0px" class="mb-0"><abbr class="font-italic">Date: </abbr>{{ video.uploaded_at }}</p>   -->
+                        <p style="font-size:10px" class="m-0"><abbr class="font-italic font-weight-bold">Title:
+                            </abbr>{{ video.video_title }}</p>
+                        <p style="font-size:10px;" class="m-0"><abbr class="font-italic font-weight-bold">Description:
+                            </abbr>{{ video.explain_text }} </p>
                     </abbr>
                 </div>
             </div>
@@ -32,13 +39,13 @@
         </div>
     </div>
 </section>
-<!-- Recommendation -->
+<!-- Buy the same item right now -->
 <section class="recommendation mt-4">
     <div class="d-flex justify-content-between">
-        <h3>Recommendation</h3>
+        <h3>Buy the same item right now</h3>
     </div>
     <div class="row mt-3">
-        <div class="col-2">
+        <div class="col-2 shadow-sm rounded">
             <figure>
                 <a href="{{ video_items[0].item_url_1 }}">
                     <img src="{{ video_items[0].item_image_1 }}" class="img-fluid">
@@ -46,14 +53,15 @@
             </figure>
             <div>
                 <p>
-                    <a href="{{ video_items[0].item_url_1 }}" class="d-block text-truncate">{{ video_items[0].item_name_1 }}</a>
+                    <a href="{{ video_items[0].item_url_1 }}"
+                        class="d-block text-truncate">{{ video_items[0].item_name_1 }}</a>
                 </p>
             </div>
             <div class="text-danger">
                 <span class="important text-left">{{ video_items[0].item_price_1 }}<small>円</small></span>
             </div>
         </div>
-        <div class="col-2">
+        <div class="col-2 shadow-sm rounded">
             <figure>
                 <a href="{{ video_items[0].item_url_2 }}">
                     <img src="{{ video_items[0].item_image_2 }}" class="img-fluid">
@@ -61,14 +69,15 @@
             </figure>
             <div>
                 <p>
-                    <a href="{{ video_items[0].item_url_2 }}" class="d-block text-truncate">{{ video_items[0].item_name_2 }}</a>
+                    <a href="{{ video_items[0].item_url_2 }}"
+                        class="d-block text-truncate">{{ video_items[0].item_name_2 }}</a>
                 </p>
             </div>
             <div class="text-danger">
                 <span class="important text-left">{{ video_items[0].item_price_2 }}<small>円</small></span>
             </div>
         </div>
-        <div class="col-2">
+        <div class="col-2 shadow-sm rounded">
             <figure>
                 <a href="{{ video_items[0].item_url_3 }}">
                     <img src="{{ video_items[0].item_image_3 }}" class="img-fluid">
@@ -76,14 +85,15 @@
             </figure>
             <div>
                 <p>
-                    <a href="{{ video_items[0].item_url_3 }}" class="d-block text-truncate">{{ video_items[0].item_name_3 }}</a>
+                    <a href="{{ video_items[0].item_url_3 }}"
+                        class="d-block text-truncate">{{ video_items[0].item_name_3 }}</a>
                 </p>
             </div>
             <div class="text-danger">
                 <span class="important text-left">{{ video_items[0].item_price_3 }}<small>円</small></span>
             </div>
         </div>
-        <div class="col-2">
+        <div class="col-2 shadow-sm rounded">
             <figure>
                 <a href="{{ video_items[0].item_url_4 }}">
                     <img src="{{ video_items[0].item_image_4 }}" class="img-fluid">
@@ -91,14 +101,15 @@
             </figure>
             <div>
                 <p>
-                    <a href="{{ video_items[0].item_url_4 }}" class="d-block text-truncate">{{ video_items[0].item_name_4 }}</a>
+                    <a href="{{ video_items[0].item_url_4 }}"
+                        class="d-block text-truncate">{{ video_items[0].item_name_4 }}</a>
                 </p>
             </div>
             <div class="text-danger">
                 <span class="important text-left">{{ video_items[0].item_price_4 }}<small>円</small></span>
             </div>
         </div>
-        <div class="col-2">
+        <div class="col-2 shadow-sm rounded">
             <figure>
                 <a href="{{ video_items[0].item_url_5 }}">
                     <img src="{{ video_items[0].item_image_5 }}" class="img-fluid">
@@ -106,7 +117,8 @@
             </figure>
             <div>
                 <p>
-                    <a href="{{ video_items[0].item_url_5 }}" class="d-block text-truncate">{{ video_items[0].item_name_5 }}</a>
+                    <a href="{{ video_items[0].item_url_5 }}"
+                        class="d-block text-truncate">{{ video_items[0].item_name_5 }}</a>
                 </p>
             </div>
             <div class="text-danger">
@@ -115,7 +127,7 @@
         </div>
     </div>
 </section>
-{% block content2 %}{% endblock %}  
+{% block content2 %}{% endblock %}
 
 
-{% endblock %}  
+{% endblock %}
