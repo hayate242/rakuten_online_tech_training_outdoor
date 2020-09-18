@@ -9,7 +9,9 @@
     <div class="d-flex justify-content-around mt-4">
         <!-- Left side -->
         <div class="col-7">
-            <iframe width="640" height="360" src="{{ videos[0].Youtube_link }}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+            <iframe width="640" height="360" src="{{ videos[0].Youtube_link }}" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen>
             </iframe>
         </div>
         <!-- Right side -->
@@ -17,14 +19,19 @@
             {% for video in videos[1:] %}
             <div class="d-flex justify-content-around mt-0">
                 <div class="mt-2">
-                    <iframe width="150" height="90" src="{{ video.Youtube_link }}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
-                    </iframe> 
+                    <iframe width="150" height="90" src="{{ video.Youtube_link }}" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen>
+                    </iframe>
                 </div>
                 <div>
-                    <abbr style="font-size:9px"><abbr class="font-italic font-weight-bold">Date:</abbr> {{ video.uploaded_at }}
-                    <!-- <p style="font-size:9px inline-height:0px" class="mb-0"><abbr class="font-italic">Date: </abbr>{{ video.uploaded_at }}</p>   -->
-                    <p style="font-size:10px" class="m-0"><abbr class="font-italic font-weight-bold">Title: </abbr>{{ video.video_title }}</p> 
-                    <p style="font-size:10px;" class="m-0"><abbr class="font-italic font-weight-bold">Description: </abbr>{{ video.explain_text }} </p>
+                    <abbr style="font-size:9px"><abbr class="font-italic font-weight-bold">Date:</abbr>
+                        {{ video.uploaded_at }}
+                        <!-- <p style="font-size:9px inline-height:0px" class="mb-0"><abbr class="font-italic">Date: </abbr>{{ video.uploaded_at }}</p>   -->
+                        <p style="font-size:10px" class="m-0"><abbr class="font-italic font-weight-bold">Title:
+                            </abbr>{{ video.video_title }}</p>
+                        <p style="font-size:10px;" class="m-0"><abbr class="font-italic font-weight-bold">Description:
+                            </abbr>{{ video.explain_text }} </p>
                     </abbr>
                 </div>
             </div>
@@ -35,7 +42,7 @@
 <!-- Recommendation -->
 <section class="recommendation mt-4">
     <div class="d-flex justify-content-between">
-        <h3>Recommendation</h3>
+        <h3>Buy the same item right now</h3>
     </div>
     <div class="row mt-3">
         <div class="col-2">
@@ -46,7 +53,8 @@
             </figure>
             <div>
                 <p>
-                    <a href="{{ video_items[0].item_url_1 }}" class="d-block text-truncate">{{ video_items[0].item_name_1 }}</a>
+                    <a href="{{ video_items[0].item_url_1 }}"
+                        class="d-block text-truncate">{{ video_items[0].item_name_1 }}</a>
                 </p>
             </div>
             <div class="text-danger">
@@ -61,7 +69,8 @@
             </figure>
             <div>
                 <p>
-                    <a href="{{ video_items[0].item_url_2 }}" class="d-block text-truncate">{{ video_items[0].item_name_2 }}</a>
+                    <a href="{{ video_items[0].item_url_2 }}"
+                        class="d-block text-truncate">{{ video_items[0].item_name_2 }}</a>
                 </p>
             </div>
             <div class="text-danger">
@@ -76,7 +85,8 @@
             </figure>
             <div>
                 <p>
-                    <a href="{{ video_items[0].item_url_3 }}" class="d-block text-truncate">{{ video_items[0].item_name_3 }}</a>
+                    <a href="{{ video_items[0].item_url_3 }}"
+                        class="d-block text-truncate">{{ video_items[0].item_name_3 }}</a>
                 </p>
             </div>
             <div class="text-danger">
@@ -91,7 +101,8 @@
             </figure>
             <div>
                 <p>
-                    <a href="{{ video_items[0].item_url_4 }}" class="d-block text-truncate">{{ video_items[0].item_name_4 }}</a>
+                    <a href="{{ video_items[0].item_url_4 }}"
+                        class="d-block text-truncate">{{ video_items[0].item_name_4 }}</a>
                 </p>
             </div>
             <div class="text-danger">
@@ -106,7 +117,8 @@
             </figure>
             <div>
                 <p>
-                    <a href="{{ video_items[0].item_url_5 }}" class="d-block text-truncate">{{ video_items[0].item_name_5 }}</a>
+                    <a href="{{ video_items[0].item_url_5 }}"
+                        class="d-block text-truncate">{{ video_items[0].item_name_5 }}</a>
                 </p>
             </div>
             <div class="text-danger">
@@ -115,7 +127,7 @@
         </div>
     </div>
 </section>
-{% block content2 %}{% endblock %}  
+{% block content2 %}{% endblock %}
 
 
-{% endblock %}  
+{% endblock %}
